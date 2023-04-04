@@ -1,0 +1,16 @@
+package com.sxtmovie.app.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+import com.sxtmovie.action.Crawler;
+
+@WebServlet("index.jsp")
+public class FirstCrawl extends HttpServlet{
+	
+	public void crawlerAction() {
+		Crawler crawler = new Crawler();
+		
+	}
+	
+}

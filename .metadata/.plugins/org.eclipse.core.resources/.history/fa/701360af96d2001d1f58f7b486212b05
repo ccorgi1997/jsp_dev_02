@@ -1,0 +1,95 @@
+package com.sxtmovie.action;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsoup.nodes.*;
+import org.jsoup.select.Elements;
+
+import com.sxtmovie.app.dao.MovieBean;
+
+public class Crawler{
+
+	public static void main(String[] args)throws IOException {
+		
+		// 크롤링할 url을 String 변수로 만들기 
+		String url="http://www.cgv.co.kr/movies/?lt=1&ft=0";
+		
+		// Document 객체에 url 커넥트해서 html 겟해오기 (다른 거 말고 꼭 org.jsoup.nodes 객체로 자동완성해주세요!)
+		Document document = Jsoup.connect(url).get();  
+		
+		// Elements 객체에 document에 들어있는 html들을 원하는 대로 셀렉트해서 담아옵니다(이것도 꼭 org.jsoup.nodes 객체로 자동완성해주세요!)
+		// 셀렉터는 js 할 때 쓰셨던 거랑 거의 비슷해요 ~ 크롤링할 html에서 클래스나 태그 확인하셔서 쓰시면됩니다
+		Elements ols = document.getElementsByTag("ol"); // ol태그들 뽑아오기
+		
+		// ol 태그 수만큼 반복문 
+		for(Element ol : ols) {
+			
+			// ol에서 li태그들 다시 lis로 뽑기
+			Elements lis = ol.getElementsByTag("li");
+			
+			// li 태그 수만큼 반복문
+			for(Element li : lis) {
+				// 비어있는 li가 있어서 if 처리해줍니다
+				if(li.text() != "") {
+					
+					// 실행해보세요! text()나 attr() 메소드로 내용을 깔끔하게 가져올 수 있습니다
+					System.out.println(li.text());
+					System.out.println(li.getElementsByClass("rank").text());
+					System.out.println(li.getElementsByClass("rank").text().substring(3));
+					System.out.println(li.getElementsByTag("img").attr("src"));
+					System.out.println(li.getElementsByClass("title").text());
+					System.out.println(li.getElementsByClass("percent").text());
+					Elements percents = li.getElementsByClass("percent");
+					for(Element percent : percents) {
+						System.out.println(percent.getElementsByTag("span").text());
+					}
+					String date = li.getElementsByClass("txt-info").text();
+					System.out.println(date.substring(0,10));
+					
+					// em 태그는 있는 경우도 있고 없는 경우도 있는데 없으면 그냥 공백으로 나옵니다
+					System.out.println(li.getElementsByTag("em").text());
+					System.out.println("----------------------------------");
+				}
+			}
+		}
+	}
+	
+	public void CrawlerAction() throws IOException {
+		
+		String url="http://www.cgv.co.kr/movies/?lt=1&ft=0";
+		Document document = Jsoup.connect(url).get();  
+		Elements ols = document.getElementsByTag("ol");
+		
+		List<MovieBean> movieList = new ArrayList<>();
+		
+		for(Element ol : ols) {
+			
+			Elements lis = ol.getElementsByTag("li");
+			for(Element li : lis) {
+				if(li.text() != "") {
+					
+					MovieBean movie = new MovieBean();
+					movie.setMovieRank(Integer.parseInt(li.getElementsByClass("rank").text().substring(3)));
+					System.out.println(li.getElementsByClass("rank").text());
+					System.out.println(li.getElementsByTag("img").attr("src"));
+					System.out.println(li.getElementsByClass("title").text());
+					System.out.println(li.getElementsByClass("percent").text());
+					Elements percents = li.getElementsByClass("percent");
+					for(Element percent : percents) {
+						System.out.println(percent.getElementsByTag("span").text());
+					}
+					String date = li.getElementsByClass("txt-info").text();
+					System.out.println(date.substring(0,10));
+					
+					// em 태그는 있는 경우도 있고 없는 경우도 있는데 없으면 그냥 공백으로 나옵니다
+					System.out.println(li.getElementsByTag("em").text());
+					System.out.println("----------------------------------");
+				}
+			}
+		}
+	}
+}

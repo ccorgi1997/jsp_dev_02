@@ -1,0 +1,9 @@
+package com.sxtmovie.app.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("index.jsp")
+public class FirstCrawl extends HttpServlet{
+
+}

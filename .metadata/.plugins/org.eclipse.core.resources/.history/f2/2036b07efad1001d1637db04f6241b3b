@@ -1,0 +1,63 @@
+@charset "EUC-KR";
+
+
+        * {font-family: 'Noto Sans KR', sans-serif; }
+        
+        .header{
+            width:65%;
+            margin : 0 auto;
+            padding: 100px 20px 0px 20px;
+        }
+
+        #logo{float:left;}
+
+        .boxoffice{
+            float: left;
+            margin: 48px 10px 0px 0px;
+            width:200px;
+            font-weight: bold;
+            font-size:15px;
+        }
+        .navbar{
+            float : right;
+            display: flex;
+        }
+        .iconlabel{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px; 
+        }
+        .bi {
+            font-size : 35px;
+            color : #4346FF;    
+        }
+        .iconlabeltext{
+            color:black;
+            margin: 2px 0px;
+            font-size: 12px;
+        }
+        footer{
+            height:200px;
+            background-color: #EEF0F2;
+        }
+        .footer{
+            width:65%;
+            margin : 0 auto;
+            font-size:12px;
+        }
+
+        #bonew{color:#FF0088;margin-right:10px;}
+        #botitle{float: right;}
+
+        .footerdetail{
+            padding-top:10px;
+        }
+        .bottomline{
+            position:relative;
+            top:50px;
+        }
+        #members{float:left;}
+        #copyright{float:right;}

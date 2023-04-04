@@ -1,0 +1,177 @@
+@charset "EUC-KR";
+
+/* 	전체영역 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+body{
+	margin:0px;
+}
+/* 	헤더 */
+.header {
+	width: 65%;
+	margin: 0 auto;
+	padding: 100px 20px 0px 20px;
+}
+
+#logo {
+	float: left;
+}
+
+.boxoffice {
+	float: left;
+	margin: 48px 10px 0px 0px;
+	width: 200px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.navbar {
+	float: right;
+	display: flex;
+}
+
+.iconlabel {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 20px;
+}
+
+.bi {
+	font-size: 35px;
+	color: #4346FF;
+}
+
+.iconlabeltext {
+	color: black;
+	margin: 2px 0px;
+	font-size: 12px;
+}
+
+/* 	푸터	 */
+footer {
+	clear: both;
+	height: 200px;
+	background-color: #EEF0F2;
+	margin : 100px 0px 0px 0px !important;
+}
+
+.footer {
+	padding-top: 10px;
+	width: 65%;
+	margin: 0 auto;
+	font-size: 12px;
+	position:relative;
+}
+
+#bonew {
+	color: #FF0088;
+	margin-right: 10px;
+}
+
+#botitle {
+	float: right;
+}
+
+.footerdetail {
+	padding-top: 10px;
+}
+
+.bottomline {
+	position: absolute;
+	bottom:10px;
+}
+
+#members {
+	float: left;
+}
+
+#copyright {
+	float: right !important;
+}
+
+/* 	디테일	*/
+main {
+	width: 65%;
+	margin: 50px auto;
+	overflow: auto;
+}
+
+.detail_imgarea {
+	overflow: hidden;
+	float: left;
+	width: 356px;
+	height: 500px;
+}
+
+.detail_imgarea>img {
+	max-width: 356px;
+}
+
+.detail_textarea {
+	position: relative;
+	float: right;
+	width: 550px;
+	height: 450px;
+	padding-top: 50px;
+}
+
+.detail_textarea>strong {
+	font-size: 20px;
+}
+
+.ratebutton {
+	background-color: #05E16A;
+	border: none;
+	font-weight: bold;
+	color: white;
+	border-radius: 5px;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	margin-right: 5px;
+}
+
+#detail_et {
+	font-size: 5px;
+	color: grey;
+}
+
+#detail_ct {
+	font-size: 12px;
+	text-align: justify;
+	margin-top: 30px;
+}
+
+.detail_bt {
+	width: 140px;
+	height: 40px;
+	border-radius: 6px;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+#detail_tb {
+	background-color: #4346FF;
+	color: white;
+	border: none;
+}
+
+#detail_rb {
+	background-color: white;
+	color: #4346FF;
+	border: 3px solid #4346FF;
+}
+
+.detail_textarea>form {
+	position: absolute;
+	bottom: 0px;
+}
+
+.bi-egg-fill {
+	color: yellow;
+	font-size: 15px;
+}

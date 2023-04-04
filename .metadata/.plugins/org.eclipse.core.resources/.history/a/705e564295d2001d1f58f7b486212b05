@@ -1,0 +1,10 @@
+package com.sxtmovie.app.dao;
+
+public class MovieBean {
+	private int movieRank;
+	private String movieTitle;
+	private String movieImgsrc;
+	private String movieRvRate;
+	private String movieGeRate;
+	private String movieOpDate;
+}

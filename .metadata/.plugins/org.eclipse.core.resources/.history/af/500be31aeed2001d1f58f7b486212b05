@@ -1,0 +1,96 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='style.css'>
+</head>
+<body>
+    <header id="header"></header>
+    <main>
+        <h2 id="chart_title">무비차트</h2>
+        <div class="chart_area">
+            <div class="chart_cardarea">
+                <div class="chart_card">
+                    <div class="card_rank">1</div>
+                    <img class="card_img" src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg">
+                    <h5 class="card_title">영화 제목</h5>
+                    <p class="card_detail">
+                        예매율 <span>00.0%</span> | 
+                        🥚 <span>00%</span>
+                    </p>
+                    <button class="card_button">예매하기</button>
+                </div>
+            </div>
+            <div class="chart_cardarea">
+                <div class="chart_card">
+                    <div class="card_rank">1</div>
+                    <img class="card_img" src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg">
+                    <h5 class="card_title">영화 제목</h5>
+                    <p class="card_detail">
+                        예매율 <span>00.0%</span> | 
+                        🥚 <span>00%</span>
+                    </p>
+                    <button class="card_button">예매하기</button>
+                </div>
+            </div>
+            <div class="chart_cardarea">
+                <div class="chart_card">
+                    <div class="card_rank">1</div>
+                    <img class="card_img" src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg">
+                    <h5 class="card_title">영화 제목</h5>
+                    <p class="card_detail">
+                        예매율 <span>00.0%</span> | 
+                        🥚 <span>00%</span>
+                    </p>
+                    <button class="card_button">예매하기</button>
+                </div>
+            </div>
+            <div class="chart_cardarea">
+                <div class="chart_card">
+                    <div class="card_rank">1</div>
+                    <img class="card_img" src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg">
+                    <h5 class="card_title">영화 제목</h5>
+                    <p class="card_detail">
+                        예매율 <span>00.0%</span> | 
+                        🥚 <span>00%</span>
+                    </p>
+                    <button class="card_button">예매하기</button>
+                </div>
+            </div>
+            <div class="chart_cardarea">
+                <div class="chart_card">
+                    <div class="card_rank">1</div>
+                    <img class="card_img" src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg">
+                    <h5 class="card_title">영화 제목</h5>
+                    <p class="card_detail">
+                        예매율 <span>00.0%</span> | 
+                        🥚 <span>00%</span>
+                    </p>
+                    <button class="card_button">예매하기</button>
+                </div>
+            </div>
+            <div class="chart_cardarea">
+                <div class="chart_card">
+                    <div class="card_rank">1</div>
+                    <img class="card_img" src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg">
+                    <h5 class="card_title">영화 제목</h5>
+                    <p class="card_detail">
+                        예매율 <span>00.0%</span> | 
+                        🥚 <span>00%</span>
+                    </p>
+                    <button class="card_button">예매하기</button>
+                </div>
+            </div>
+ 
+        </div>
+    </main>    	
+    <footer id="footer"></footer>
+</body>
+<script src='function.js'></script>
+</html>

@@ -1,0 +1,14 @@
+    <footer>
+        <div class="footer">
+            <p class="footerdetail">
+                영화 정보 크롤링 출처 : cgv 무비차트 http://www.cgv.co.kr/movies/<br>
+                박스오피스 순위 API : 영화진흥위원회 OPEN API<br>http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json<br>
+                사용 라이브러리 : mybatis, jsoup, json-simple, ojdbc6, jstl, servlet-api<br>
+            </p>
+            <div class="bottomline">
+                <p id="members">은나현&nbsp&nbsp|&nbsp&nbsp이은호&nbsp&nbsp|&nbsp&nbsp김민재&nbsp&nbsp|&nbsp&nbsp이가연&nbsp&nbsp|&nbsp&nbsp이기혁</p>
+                <p id="copyright">JSP_2조 수현없는수현팀 all rights reserved </p>
+            </div>
+            <hr>
+        </div>
+    </footer>
