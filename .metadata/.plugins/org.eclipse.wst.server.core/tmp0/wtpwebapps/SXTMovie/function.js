@@ -67,3 +67,35 @@ function ticketing_dp(){
 		alert("")
         $('#'+e.target.value).toggleClass('seat_clicked')
     }
+    
+// 로그인페이지 validationMsg
+	let lf = document.login_form;
+ 	$('#lg_userId').focusout(function(){
+		if(!lf.userId.value.trim()){
+			$("#idAlert").html('<div class="loginAlert">아이디를 입력하세요.</div')
+		}else{
+			$("#idAlert").empty();
+		}
+	}); 
+ 	$('#lg_userPw').focusout(function(){
+		if(!lf.userPw.value.trim()){
+			$("#pwAlert").html('<div class="loginAlert">비밀번호를 입력하세요.</div')
+		}else{
+			$("#pwAlert").empty();
+		}
+	});  
+ // 로그인 submit validation
+
+	function loginValidation(){
+		if(!lf.userId.value.trim()){
+			alert("아이디를 입력하세요.");
+			lf.userId.focus();
+			return false;
+		} 
+		if(!lf.userPw.value.trim()){
+			alert("비밀번호를 입력하세요.");
+			lf.userPw.focus();
+			return false;
+		} 
+		lf.submit();
+	}

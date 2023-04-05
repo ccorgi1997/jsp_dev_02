@@ -380,6 +380,11 @@ footer {
         left:30px;
         top:10px;
     }
+    #login_form .loginAlert{
+        margin:0;
+        min-width:20px;
+        position:static;
+    }
     .loginLb{
         box-sizing:border-box;
         width:90%;
@@ -411,6 +416,7 @@ footer {
         margin-right: 20px;
         color:#A5A6F6;
     }
+ 
 /* 	------------------------회원가입----------------------------	*/   
     #signup_form{
         margin:50px auto;
@@ -445,7 +451,7 @@ footer {
         border: none;
         color:#fff;
     }
-    .signupAlert{
+    .signupAlert, .loginAlert{
         position:absolute;
         font-size:13px;
         top:45px;

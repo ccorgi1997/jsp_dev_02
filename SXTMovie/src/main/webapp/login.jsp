@@ -21,16 +21,18 @@
                 <hr style="border: solid 2px #4346FF ">
                 <p id="loginText">아이디와 비밀번호를 입력해 주세요.</p>
             </div>
-            <form action="" name="login_form" id="login_form" align="center">
+            <form action="" name="login_form" id="login_form" align="center" method="post">
                 <div style="position:relative;">
                     <i class="bi bi-person"></i>
-                    <input type="text" name="userId" class="loginLb" required><br>
+                    <input type="text" name="userId" id="lg_userId" class="loginLb"> 
                 </div>
-                <div style="position:relative;">
+                <div id="idAlert" ></div>
+                <div id="loginPw" style="position:relative;">
                     <i class="bi bi-lock"></i>
-                    <input type="password" name="userPw" class="loginLb" required>
+                    <input type="password" name="userPw" id="lg_userPw" class="loginLb">
                 </div>
-                <input type="submit" class="btn_login" value="로그인"><br>
+                <div id="pwAlert" ></div>
+                <input type="submit" class="btn_login" id="btn_login" value="로그인"><br>
             </form>
             <a href="${pageContext.request.contextPath}/sxt/signup.mo" id="goSignUpLabel">아직 회원이 아니신가요? ></a>
         </div>
@@ -38,4 +40,7 @@
     <footer id="footer"></footer>
 </body>
 <script src='function.js'></script>
+<script>
+	$('#btn_login').click(loginValidation);
+</script>
 </html>
