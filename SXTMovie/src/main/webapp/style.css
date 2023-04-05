@@ -267,6 +267,7 @@ footer {
 /* 영화 제목 (카드) */
 .card-title{
     text-align: right;
+    font-size:1rem !important;
 }
 
 /* 예매율, 골든 */
@@ -284,7 +285,7 @@ footer {
 	font-size:50px;
 	font-weight:bolder;
 	bottom:-22%;
-	left:5%;
+	left:2%;
 	
 }
 /* 	------------------------차트---------------------------	*/

@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="container" id="cardcontainer">
-                <div class="row r_moviechart">
+             <div class="row r_moviechart">
                     <div class="chart_text">
                             <h1 id="movie_chart" > 무비 차트 </h1>&nbsp;&nbsp;
                             <h1 id="movie_rank" style="display:inline !important;"> TOP 5 </h1>
@@ -52,89 +52,31 @@
                             </div>
                     </div>
                 <div class="row card_moviechart">
-                    <div class="col card_frameset">
-                        <div class="row cardset">
-                            <div class="card text-center card_posterFrame">
-                            	<div class="cardimg">
-                            		<strong>1</strong>
-	                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86909/86909_320.jpg" class="card-img-top" alt="1위">
-                            	</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">존 윅 4 </h5>
-                                    <h6 class="card-text">
-                                        예매율 00% |  골든 00%
-                                    </h6>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-primary ticketing">예매하기</a>
-                        </div>
-                    </div>
-                    <div class="col card_frameset">
-                        <div class="row cardset">
-                            <div class="card text-center card_posterFrame">
-                            	<div class="cardimg">
-                            		<strong>1</strong>
-	                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86909/86909_320.jpg" class="card-img-top" alt="1위">
-                            	</div>                            
-                                <div class="card-body">
-                                    <h5 class="card-title">존 윅 4 </h5>
-                                    <h6 class="card-text">
-                                        예매율 00% |  골든 00%
-                                    </h6>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-primary ticketing">예매하기</a>
-                        </div>
-                    </div>
-                    <div class="col card_frameset">
-                        <div class="row cardset">
-                            <div class="card text-center card_posterFrame">
-                            	<div class="cardimg">
-                            		<strong>1</strong>
-	                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86909/86909_320.jpg" class="card-img-top" alt="1위">
-                            	</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">존 윅 4 </h5>
-                                    <h6 class="card-text">
-                                        예매율 00% |  골든 00%
-                                    </h6>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-primary ticketing">예매하기</a>
-                        </div>
-                    </div>
-                    <div class="col card_frameset">
-                        <div class="row cardset">
-                            <div class="card text-center card_posterFrame">
-                            	<div class="cardimg">
-                            		<strong>1</strong>
-	                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86909/86909_320.jpg" class="card-img-top" alt="1위">
-                            	</div>                                <div class="card-body">
-                                    <h5 class="card-title">존 윅 4 </h5>
-                                    <h6 class="card-text">
-                                        예매율 00% |  골든 00%
-                                    </h6>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-primary ticketing">예매하기</a>
-                        </div>
-                    </div>
-                    <div class="col card_frameset">
-                        <div class="row cardset">
-                            <div class="card text-center card_posterFrame">
-                            	<div class="cardimg">
-                            		<strong>1</strong>
-	                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86909/86909_320.jpg" class="card-img-top" alt="1위">
-                            	</div>                                <div class="card-body">
-                                    <h5 class="card-title">존 윅 4 </h5>
-                                    <h6 class="card-text">
-                                        예매율 00% |  골든 00%
-                                    </h6>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-primary ticketing">예매하기</a>
-                        </div>
-                    </div>
+			        <c:set var="loop_flag" value="false" />
+			        <c:forEach var = "movie" items ="${MovieList}">
+					    <c:if test="${not loop_flag }">
+					        <c:if test="${movie.movieRank eq 5 }">
+					            <c:set var="loop_flag" value="true" />
+					        </c:if>
+		                    <div class="col card_frameset">
+		                        <div class="row cardset">
+		                            <div class="card text-center card_posterFrame">
+		                            	<div class="cardimg">
+		                            		<strong>${movie.movieRank}</strong>
+			                                <img src= "${movie.movieImgsrc}" class="card-img-top" alt="${movie.movieRank }+위">
+		                            	</div>
+		                                <div class="card-body">
+		                                    <h5 class="card-title">${movie.movieTitle }</h5>
+		                                    <h6 class="card-text">
+		                                        예매율 ${movie.movieRvRate} |  🥚 ${movie.movieGeRate }
+		                                    </h6>
+		                                </div>
+		                            </div>
+		                            <a href="#" class="btn btn-primary ticketing">예매하기</a>
+		                        </div>
+		                    </div>
+					    </c:if>        			
+        			</c:forEach>
                 </div>
             </div>
         </div>
