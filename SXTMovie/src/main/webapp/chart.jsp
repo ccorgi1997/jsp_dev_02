@@ -25,7 +25,20 @@
 	                    <div class="card_rank">${movie.movieRank }</div>
 	                    <img class="card_img" src="${movie.movieImgsrc}">
 	                    <div style=" display:inline-flex;margin:10px auto;" >
-		                    <button class="ratebutton"  value="이용가" >ALL</button>
+	                    	<c:choose>
+	                    		<c:when test="${movie.movieAge eq '12'}">
+				                    <button class="ratebutton"  style="background-color:#F2E503" value="${movie.movieAge}" >${movie.movieAge }</button>
+	                    		</c:when>
+	                    		<c:when test="${movie.movieAge eq '15'}">
+				                    <button class="ratebutton"  style="background-color:#FAC710" value="${movie.movieAge}" >${movie.movieAge }</button>
+	                    		</c:when>
+	                    		<c:when test="${movie.movieAge eq '18'}">
+				                    <button class="ratebutton"  style="background-color:#DA0063" value="${movie.movieAge}" >${movie.movieAge }</button>
+	                    		</c:when>
+	                    		<c:otherwise>
+				                    <button class="ratebutton" value="${movie.movieAge}" >${movie.movieAge }</button>
+	                    		</c:otherwise>	                    			                    		
+	                    	</c:choose>
 		                    <h5 class="ctcard_title">${movie.movieTitle}</h5>
 	                    </div>
 	                    <p class="card_detail">

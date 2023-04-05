@@ -9,6 +9,7 @@ public class MovieBean {
 	private String movieGeRate;
 	private String movieOpDate;
 	private String movieDday;
+	private String movieAge;
 
 	public int getMovieRank() {
 		return movieRank;
@@ -52,4 +53,11 @@ public class MovieBean {
 	public void setMovieDday(String movieDday) {
 		this.movieDday = movieDday;
 	}
+	public String getMovieAge() {
+		return movieAge;
+	}
+	public void setMovieAge(String movieAge) {
+		this.movieAge = movieAge;
+	}
+	
 }

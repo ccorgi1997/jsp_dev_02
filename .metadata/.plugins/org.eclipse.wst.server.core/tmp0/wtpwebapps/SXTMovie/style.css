@@ -332,6 +332,7 @@ footer {
     .chart_card .ratebutton{
     	display:inline-block; 
         width:25px;
+        min-width:25px;
         height:25px;
         font-size:12px;
         margin-top:3px;

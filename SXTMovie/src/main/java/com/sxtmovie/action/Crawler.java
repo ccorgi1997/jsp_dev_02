@@ -47,6 +47,7 @@ public class Crawler{
 					movie.setMovieOpDate(date.substring(0,10));
 					
 					movie.setMovieDday(li.getElementsByTag("em").text().trim()); 
+					movie.setMovieAge(li.getElementsByTag("i").text().trim());
 					
 					movieList.add(movie);
 				}
