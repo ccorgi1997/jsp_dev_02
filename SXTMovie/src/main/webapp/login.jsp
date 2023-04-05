@@ -24,11 +24,11 @@
             <form action="" name="login_form" id="login_form" align="center">
                 <div style="position:relative;">
                     <i class="bi bi-person"></i>
-                    <input type="text" name="userId" class="loginLb" ><br>
+                    <input type="text" name="userId" class="loginLb" required><br>
                 </div>
                 <div style="position:relative;">
                     <i class="bi bi-lock"></i>
-                    <input type="password" name="userPw" class="loginLb" >
+                    <input type="password" name="userPw" class="loginLb" required>
                 </div>
                 <input type="submit" class="btn_login" value="로그인"><br>
             </form>
