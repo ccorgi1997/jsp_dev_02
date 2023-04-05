@@ -406,7 +406,7 @@ footer {
         color:#fff;
         font-size: 18px;
         cursor: pointer;
-        margin:10px auto 20px auto;
+        margin:20px auto ;
     }
     .btn_login:hover, .btn_signup:hover, #doubleChkBt:hover{
     	background-color: #ff0088;

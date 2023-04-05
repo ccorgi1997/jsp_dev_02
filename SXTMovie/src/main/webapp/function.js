@@ -43,7 +43,7 @@ function ticketing_dp(){
         ,maxDate: "+7D" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)  
     });
 } 
-
+ 
 // 예매 페이지 시트추가 반복문
     function makeseats(){
         let seatsarea = $('#seatsarea')
@@ -84,6 +84,7 @@ function ticketing_dp(){
 			$("#pwAlert").empty();
 		}
 	});  
+	
  // 로그인 submit validation
 
 	function loginValidation(){
@@ -99,3 +100,109 @@ function ticketing_dp(){
 		} 
 		lf.submit();
 	}
+
+// 회원가입 페이지 validationMsg
+	let sf = document.signup_form;
+ 	$('#userId').focusout(function(){
+		if(!sf.userId.value.trim()){
+			$("#su_IdAlert").text('아이디를 입력하세요.')
+		}else if(!/^[a-zA-Z][0-9a-zA-Z]{7,14}$/.test(sf.userId.value.trim())){ 
+			$("#su_IdAlert").text('아이디 형식은 영문, 숫자 혼합 8~15자입니다.')
+		}else{
+			$("#su_IdAlert").text('');
+		}
+	}); 
+ 	$('#userPw').focusout(function(){
+		if(!sf.userPw.value.trim()){
+			$("#su_PwAlert").text('비밀번호를 입력하세요.')
+		}else if(!/^[a-zA-Z][0-9a-zA-Z]{7,14}$/.test(sf.userPw.value.trim())){ 
+			$("#su_PwAlert").text('비밀번호 형식은 영문, 숫자 혼합 8~15자입니다.')
+		}else{
+			$("#su_PwAlert").text('');
+		}
+	}); 
+ 	$('#userPwCheck').focusout(function(){
+		if(!sf.userPwCheck.value.trim()){
+			$("#su_PwChkAlert").text('비밀번호 확인란을 입력하세요.')
+		}else if(sf.userPwCheck.value.trim()!= sf.userPw.value.trim()){ 
+			$("#su_PwChkAlert").text('비밀번호 확인란이 일치하지 않습니다.')
+		}else{
+			$("#su_PwChkAlert").text('');
+		}
+	}); 
+ 	$('#userBirth').focusout(function(){
+		if(!sf.userBirth.value.trim()){
+			$("#su_BirthAlert").text('생년월일을 입력하세요.')
+		}else if(!/^\d{8}$/.test(sf.userBirth.value.trim())){ 
+			$("#su_BirthAlert").text('생년월일 형식은 정수 8자리입니다.')
+		}else{
+			$("#su_BirthAlert").text('');
+		}
+	}); 
+ 	$('#userPhone').focusout(function(){
+		if(!sf.userPhone.value.trim()){
+			$("#su_PhoneAlert").text('전화번호를 입력하세요.')
+		}else if(!/^\d{9,11}$/.test(sf.userPhone.value.trim())){ 
+			$("#su_PhoneAlert").text('전화번호 형식은 정수 9~11자리입니다.')
+		}else{
+			$("#su_PhoneAlert").text('');
+		}
+	});
+	
+ // 로그인 submit validation
+
+function signupValidation(){
+		
+		if(!sf.userId.value.trim()){
+			alert("아이디를 입력하세요.");
+			sf.userId.focus();
+			return false;
+		} 
+		if(!sf.userPw.value.trim()){
+			alert("비밀번호를 입력하세요.");
+			sf.userPw.focus();
+			return false;
+		} 
+		if(!sf.userPwCheck.value.trim()){
+			alert("비밀번호 확인란을 입력하세요.");
+			sf.userPwCheck.focus();
+			return false;
+		} 		
+		if(!sf.userBirth.value.trim()){
+			alert("생년월일을 입력하세요.");
+			sf.userBirth.focus();
+			return false;
+		} 
+		if(!sf.userPhone.value.trim()){
+			alert("전화번호를 입력하세요.");
+			sf.userPhone.focus();
+			return false;
+		}
+		if(!/^[a-zA-Z][0-9a-zA-Z]{7,14}$/.test(sf.userId.value.trim())){
+			alert("아이디 형식을 확인하세요!");
+			sf.userId.focus();
+			return false;
+		} 
+		if(!/^[a-zA-Z][0-9a-zA-Z]{7,14}$/.test(sf.userPw.value.trim())){
+			alert("비밀번호 형식을 확인하세요!");
+			sf.userPw.focus();
+			return false;
+		}
+		if(sf.userPwCheck.value.trim()!= sf.userPw.value.trim()){
+			alert("비밀번호 확인란이 일치하지 않습니다.");
+			sf.userPwCheck.focus();
+			return false;
+		} 
+		if(!/^\d{8}$/.test(sf.userBirth.value.trim())){
+			alert("생년월일 형식을 확인하세요!");
+			sf.userBirth.focus();
+			return false;
+		} 
+		if(!/^\d{9,11}$/.test(sf.userPhone.value.trim())){
+			alert("전화번호 형식을 확인하세요!");
+			sf.userPhone.focus();
+			return false;
+		}  
+		 				
+		sf.submit();
+}

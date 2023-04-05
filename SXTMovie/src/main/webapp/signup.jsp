@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,36 +17,49 @@
 </head>
 <body>
     <header id="header"></header>
+    <c:set var="dblCheck" value="false"/>
     <main>
         <div class="signupArea">
             <div id="signupTitle">
                 <h1>신규 회원가입</h1>
                 <hr style="border: solid 2px #4346FF ">
             </div>
-            <form action="" name="signup_form" id="signup_form" align="center">
-                <div style="position:relative;">
+            <form action="" name="signup_form" id="signup_form" align="center" method="post">
+                <div id="signup_Id" style="position:relative;">
                     <label class="signup_label">회원 아이디</label>
-                    <input type="text" name="userId" id="userId" class="signup_input" required>
+                    <input type="text" name="userId" id="userId" class="signup_input" placeholder="영문, 숫자 혼합 8~15자">
                     <input type="button" id="doubleChkBt" value="중복확인">
-                    <p class="signupAlert">중복확인 텍스트</p>
+                    <p class="signupAlert" id="su_IdAlert"></p>
                 </div>
-                <div style="position:relative;">
+                <div id="signup_Pw" style="position:relative;">
                     <label class="signup_label">비밀번호</label>
-                    <input type="password" name="userPw" class="signup_input" required>
+                    <input type="password" name="userPw" id="userPw" class="signup_input" placeholder="영문, 숫자 혼합 8~15자">
+                    <p class="signupAlert" id="su_PwAlert"></p>
                 </div>
-                <div style="position:relative;">
+                <div id="signup_PwChk" style="position:relative;">
                     <label class="signup_label">비밀번호 확인</label>
-                    <input type="text" name="userPwCheck" class="signup_input" required >
+                    <input type="password" name="userPwCheck" id="userPwCheck" class="signup_input" >
+                    <p class="signupAlert" id="su_PwChkAlert"></p>
                 </div>
-                <div style="position:relative;">
+                <div id="signup_Birth" style="position:relative;">
                     <label class="signup_label">생년월일</label>
-                    <input type="text" name="userBirth" id="datePicker" class="signup_input" required>
+                    <input type="text" name="userBirth" id="userBirth" class="signup_input" placeholder="법정생년월일 8숫자">
+                    <p class="signupAlert" id="su_BirthAlert"></p>
                 </div>
-                <div style="position:relative;">
+                <div id="signup_Phone" style="position:relative;">
                     <label class="signup_label">전화번호</label>
-                    <input type="text" name="userPhone" class="signup_input" required>
+                    <input type="text" name="userPhone" id="userPhone" class="signup_input" placeholder="- 없이 입력">
+                    <p class="signupAlert" id="su_PhoneAlert"></p>
                 </div>
-                <input type="submit" class="btn_signup" value="회원가입">
+                <c:choose>
+                	<c:when test="${dblCheck == false }">
+		                <input type="submit" class="btn_signup" value="회원가입" onclick="
+		                	alert('아이디 중복확인을 진행해 주세요!');document.signup_form.userId.focus();return false;">
+                	</c:when>
+                	<c:otherwise>
+		                <input type="submit" class="btn_signup" value="회원가입" onclick="signupValidation()">
+                	</c:otherwise>
+                </c:choose>
             </form>
         </div>
     </main>    	
@@ -53,6 +67,5 @@
 </body>
 <script src='function.js'></script>
 <script>
-	$(review_dp());
 </script>
 </html>
