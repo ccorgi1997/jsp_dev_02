@@ -29,6 +29,11 @@ public class SXTFrontController extends HttpServlet{
 		 ActionForward forward = null;
 		 switch(requestURI) {
 		 	case "/sxt/crawl.mo" : forward = new CrawlerAction().execute(request,response); break;
+		 	case "/sxt/index.mo" : forward = new ActionForward(true, "/index.jsp"); break;
+		 	case "/sxt/login.mo" : forward = new ActionForward(true, "/login.jsp"); break;
+		 	case "/sxt/signup.mo" : forward = new ActionForward(true, "/signup.jsp"); break;
+		 	case "/sxt/mypage.mo" : forward = new ActionForward(true, "/mypage.jsp"); break;
+		 	case "/sxt/chart.mo" : forward = new ActionForward(true, "/chart.jsp"); break;
 		 }
 		 
 		 // 전송에 대한 일괄처리

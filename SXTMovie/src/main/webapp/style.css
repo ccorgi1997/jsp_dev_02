@@ -263,6 +263,9 @@ footer {
     position: relative;
     vertical-align: bottom;
 }
+#more_chart:hover{
+	color: #4346FF !important;
+}
 
 /* 영화 제목 (카드) */
 .card-title{
@@ -345,6 +348,12 @@ footer {
         border:none;
         width:90px;
         height:35px;
+    }
+    .card_dday{
+    	font-size:15px;
+    	margin-right:5px;
+    	font-weight: bold;
+    	color: #FF0088;
     }
 /* ----------------------------로그인 ----------------------------*/
     .loginArea, .signupArea {

@@ -45,10 +45,12 @@
                             <h1 id="movie_chart" > 무비 차트 </h1>&nbsp;&nbsp;
                             <h1 id="movie_rank" style="display:inline !important;"> TOP 5 </h1>
                             <div style="display:inline !important;">
-                                <h5 id="more_chart" >
-                                    차트 더 보기
-                                    <i href="#" class="bi bi-plus-square-fill plus_icon"></i>
-                                </h5>
+	                            <a href="${pageContext.request.contextPath}/sxt/chart.mo">
+	                                <h5 id="more_chart" style="color:black ">
+	                                    차트 더 보기
+	                                    <i href="#" class="bi bi-plus-square-fill plus_icon"></i>
+	                                </h5>
+	                            </a>
                             </div>
                     </div>
                 <div class="row card_moviechart">
