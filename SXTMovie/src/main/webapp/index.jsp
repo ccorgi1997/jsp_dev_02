@@ -46,10 +46,10 @@
                             <h1 id="movie_rank" style="display:inline !important;"> TOP 5 </h1>
                             <div style="display:inline !important;">
 	                            <a href="${pageContext.request.contextPath}/sxt/chart.mo">
-	                                <h5 id="more_chart" style="color:black ">
+	                                <strong id="more_chart" style="color:black">
 	                                    차트 더 보기
-	                                    <i href="#" class="bi bi-plus-square-fill plus_icon"></i>
-	                                </h5>
+	                                    <i class="bi bi-plus-square-fill plus_icon"></i>
+	                                </strong>
 	                            </a>
                             </div>
                     </div>
