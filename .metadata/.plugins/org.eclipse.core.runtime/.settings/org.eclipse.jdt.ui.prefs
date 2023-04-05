@@ -1,4 +1,4 @@
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.sxtmovie.app.dao.SXTMovieDAO"><rhs name\="com.sxtmovie.app.dao.SXTMovieDAO"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.sxtmovie.app.dao.SXTMovieDAO"><rhs name\="com.sxtmovie.app.dao.SXTMovieDAO"/></lhs><lhs name\="com.sxtmovie.app.dao.MovieBean"><rhs name\="com.sxtmovie.app.dao.MovieBean"/></lhs><lhs name\="com.sxtmovie.action.Crawler"><rhs name\="com.sxtmovie.action.Crawler"/></lhs></history>
 content_assist_number_of_computers=17
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0

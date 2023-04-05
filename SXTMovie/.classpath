@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jsoup-1.15.4.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/ojdbc6-11.2.0.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
