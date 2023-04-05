@@ -21,7 +21,7 @@
                 <hr style="border: solid 2px #4346FF ">
                 <p id="loginText">아이디와 비밀번호를 입력해 주세요.</p>
             </div>
-            <form action="" name="login_form" id="login_form" align="center" method="post">
+            <form action="${pageContext.request.contextPath}/sxt/LoginAction.mo" name="login_form" id="login_form" align="center" method="post">
                 <div style="position:relative;">
                     <i class="bi bi-person"></i>
                     <input type="text" name="userId" id="lg_userId" class="loginLb"> 

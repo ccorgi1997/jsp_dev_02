@@ -1340,3 +1340,9 @@ org.eclipse.swt.SWTException: 정의되지 않음 또는 null 참조인 'scrollW
 
 !ENTRY org.eclipse.lsp4e 1 0 2023-04-05 17:57:17.056
 !MESSAGE [Info]	ESLint server running in node v18.12.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-04-05 21:43:25.585
+!MESSAGE [Info]	ESLint server running in node v18.12.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2023-04-05 21:43:27.767
+!MESSAGE [Info]	[lspserver] Using Typescript version (bundled) 4.9.3 from path "C:\gb_enh\util\eclipse-jee-2022-12-R-win32-x86_64\eclipse\plugins\org.eclipse.wildwebdeveloper_1.0.1.202211171559\node_modules\typescript\lib\tsserver.js"
