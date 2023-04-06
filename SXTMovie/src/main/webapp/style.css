@@ -14,6 +14,9 @@ a{
 body {
 	margin: 0px;
 }
+hr{
+	border-radius:5px;
+}
 /* ----------------------------	헤더 ----------------------------*/
 .header {
 	width: 65%;
@@ -676,3 +679,155 @@ main {
 	background-color: white;
 	border: #ff0088 2px solid;
 }
+/* 	------------------------마이페이지---------------------------	*/
+    .mp_title{
+        text-align:left;
+        font-size:25px;
+    }
+    .mp_title .bi{
+        color: #ff0088;
+        margin-right: 10px;
+    }
+    #mp_userId{
+        font-weight: bolder !important;
+    }
+    .mp_area{
+        min-height: 180px;
+        border-radius: 15px;
+        padding:25px;
+        box-sizing: border-box;
+    }
+    .mp_ticket{
+        width:42%;
+        background-color:#4346FF;  
+        float:left;
+    }
+    .mp_review{
+        width:55%;
+        border : #4346FF 3px solid;
+        float:right;
+    }
+    .mp_tktext{
+        color:white;
+        margin-bottom:2px;
+    }
+    .mp_rvtext{
+        margin-bottom:2px;
+    }
+    #mp_tktitle, #mp_rvtitle{
+        float:left;
+        font-size: 15px;
+        margin-top:13px;
+        font-weight: bold;
+    }
+    #mp_tkcnt, #mp_rvcnt{
+        float:right;
+        font-size:25px;
+        font-weight: bolder;
+    }
+    .mp_hr{
+        clear:both;
+        margin:15px auto;
+    } 
+    .mp_blanktxt{
+        font-size: 13px;
+        text-align: center;
+    }
+    .mp_mvtitle{
+        font-size:15px;
+        line-height:20px;
+        font-weight: bold;
+    }
+    .mp_mvdate{
+        font-size:12px;
+        line-height:20px;
+        float:right;
+        margin-right:10px;
+    }
+    .mp_seats{
+        line-height:20px;
+        font-weight: bolder;
+        float:right;
+    }
+    .mp_stars{
+        font-weight: bolder;
+        float:right;
+    }
+    .mp_tklist{
+        color:white;
+    }
+    .mp_comment{
+        position:absolute;
+        display: inline-block;
+        font-size:12px;
+        height:20px;
+        margin-left: 10%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 50%;
+        top:5px;
+    } 
+    .mp_rvlist{
+        position:relative;
+    }
+    #mp_lktitle{
+        clear:both;
+        padding-top:20px;
+        position:relative;
+        overflow: hidden;
+    }
+    #likedhr{
+        display: inline-block;
+        position:absolute;
+        width:100%;
+        top:47%;
+        margin-left: 20px;
+    }
+    .card{
+        float:left;
+        margin-right:15px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border:#4346FF 2px solid;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        min-width: 12rem; 
+    }
+    .imgarea {
+        position: relative;
+        width: 13rem; 
+        height: 250px;
+        overflow: hidden;
+    }
+    .imgarea > img {
+        position: absolute; 
+        top: 0; 		 
+        left: 0;
+        width: 13rem; 
+    }
+    .card-body{
+        text-align: right;
+    }
+    .card .bi{
+        position: absolute;
+        display: inline-block;
+        color:#ff0088;
+        font-size: 30px;
+        bottom:5px;
+        left:10px;
+    }
+    .card-text{
+        margin-right:10px;
+        font-size:13px;
+    }
+    #lkcard_title{
+        font-weight: bold;
+        font-size:18px;
+    }
+    .mp_cardlist{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left:5%;
+    }
