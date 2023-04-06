@@ -158,6 +158,11 @@ function signupValidation(){
 			sf.userId.focus();
 			return false;
 		} 
+		if($('#su_IdAlert').text().trim()!='사용 가능한 아이디입니다.'){
+			alert("아이디 중복 확인을 해 주세요!");
+			sf.userId.focus();
+			return false;
+		} 		
 		if(!sf.userPw.value.trim()){
 			alert("비밀번호를 입력하세요.");
 			sf.userPw.focus();
@@ -182,7 +187,9 @@ function signupValidation(){
 			alert("아이디 형식을 확인하세요!");
 			sf.userId.focus();
 			return false;
-		} 
+		}
+
+		 
 		if(!/^[a-zA-Z][0-9a-zA-Z]{7,14}$/.test(sf.userPw.value.trim())){
 			alert("비밀번호 형식을 확인하세요!");
 			sf.userPw.focus();

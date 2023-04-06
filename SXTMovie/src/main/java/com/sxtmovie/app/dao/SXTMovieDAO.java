@@ -39,5 +39,9 @@ public class SXTMovieDAO {
 	public List<ReviewBean> ReviewSelect(String userId){
 		return sqlsession.selectList("SXTMovie.ReviewSelect", userId); 
 	}
+	
+	public int DblCheck(String userId) {
+		return sqlsession.selectOne("SXTMovie.DblCheck",userId); 
+	}
 }
 

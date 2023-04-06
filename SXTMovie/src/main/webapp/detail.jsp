@@ -50,9 +50,22 @@
             </p>
             <hr style="border: solid 2px #4346FF;">
             <p id="detail_ct">${movieStory}</p>
-            <form name="detail_forward" id="detail_forward">
-                <input class="detail_bt" id="detail_tb" type="button" value="예매하기">
-                <input class="detail_bt" id="detail_rb" type="button" value="내 리뷰 남기기"> 
+            <form name="detail_forward" id="detail_forward" action="" method="post">
+            <input type="hidden" value="${movieData.movieTitle }" name="movieTitle">
+            <input type="hidden" value="${movieData.movieAge}" name="movieAge">
+            <input type="hidden" value="${movieEt }" name="movieEt">
+                	<c:choose>
+                		<c:when test="${empty sessionScope.userId}">
+               				 <input class="detail_bt" id="detail_tb" type="button" value="예매하기"
+               				 onclick="window.location.href='${pageContext.request.contextPath}/sxt/login.mo'">
+                			 <input class="detail_bt" id="detail_rb" type="button" value="내 리뷰 남기기"
+                			 onclick="window.location.href='${pageContext.request.contextPath}/sxt/login.mo'"> 
+                		</c:when>
+                		<c:otherwise>
+   			           		 <input class="detail_bt" id="detail_tb" type="submit" value="예매하기">
+               				 <input class="detail_bt" id="detail_rb" type="submit" value="내 리뷰 남기기">    			
+                		</c:otherwise>
+                	</c:choose>              
             </form>
         </div>
     </main>

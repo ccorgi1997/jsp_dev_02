@@ -13,11 +13,9 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 </head>
 <body>
     <header id="header"></header>
-    <c:set var="dblCheck" value="false"/>
     <main>
         <div class="signupArea">
             <div id="signupTitle">
@@ -28,7 +26,7 @@
                 <div id="signup_Id" style="position:relative;">
                     <label class="signup_label">회원 아이디</label>
                     <input type="text" name="userId" id="userId" class="signup_input" placeholder="영문, 숫자 혼합 8~15자">
-                    <input type="button" id="doubleChkBt" value="중복확인">
+                    <input type="button" id="doubleChkBt" value="중복확인" onclick="dblCheck()">
                     <p class="signupAlert" id="su_IdAlert"></p>
                 </div>
                 <div id="signup_Pw" style="position:relative;">
@@ -51,15 +49,7 @@
                     <input type="text" name="userPhone" id="userPhone" class="signup_input" placeholder="- 없이 입력">
                     <p class="signupAlert" id="su_PhoneAlert"></p>
                 </div>
-                <c:choose>
-                	<c:when test="${dblCheck == false }">
-		                <input type="submit" class="btn_signup" value="회원가입" onclick="
-		                	alert('아이디 중복확인을 진행해 주세요!');document.signup_form.userId.focus();return false;">
-                	</c:when>
-                	<c:otherwise>
-		                <input type="submit" class="btn_signup" value="회원가입" onclick="signupValidation()">
-                	</c:otherwise>
-                </c:choose>
+                <input type="submit" class="btn_signup" value="회원가입" onclick="signupValidation()">
             </form>
         </div>
     </main>    	
@@ -67,5 +57,28 @@
 </body>
 <script src='function.js'></script>
 <script>
+
+	function dblCheck(){
+		let userId =  $("#userId").val();
+		$.ajax({
+	        async: true,
+	        type : 'POST',
+	        data : {"userId":userId},
+	        url : "/sxt/dblCheckAction.mo",
+	        dataType : "json",
+	        success : function(result) {
+	            if (result > 0) {
+	                alert("이미 존재하는 아이디입니다."); 
+	                $("#su_IdAlert").text('사용할 수 없는 아이디입니다.')
+	            } else {
+	                alert("사용 가능한 아이디입니다.");
+	                $("#su_IdAlert").text('사용 가능한 아이디입니다.')
+	                $("#userPw").focus();
+	            }
+	        },error:function(){
+	        	alert("ajax 통신 에러");
+	        }
+	    })
+	}
 </script>
 </html>

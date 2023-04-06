@@ -16,4 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM TICKETS WHERE USERID = #{userId}
 	</select>	
 	
+	<select id="DblCheck" parameterType="string" resultType="int">
+		SELECT count(*) FROM USERS WHERE USERID = #{userId}
+	</select>	
 </mapper>
