@@ -32,7 +32,7 @@ header > hr{
 	float: left;
 }
 
-.boxoffice {
+#boxoffice {
 	float: left;
 	margin: 48px 10px 0px 0px;
 	width: 200px;
