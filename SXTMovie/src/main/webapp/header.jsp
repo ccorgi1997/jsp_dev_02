@@ -15,7 +15,7 @@
                 <div class="navbar">
                 	<c:choose>
                 		<c:when test="${empty sessionScope.userId}">
-		                    <a class="iconlabel" title="로그인" href="/sxt/login.mo">
+		                    <a class="iconlabel" title="로그인" href="${pageContext.request.contextPath}/sxt/login.mo">
 		                        <i class="bi bi-lock"></i>
 		                        <label class="iconlabeltext">로그인</label>
 		                    </a>
@@ -27,11 +27,11 @@
 		                    </a>                			
                 		</c:otherwise>
                 	</c:choose>
-                    <a class="iconlabel" title="회원가입" href="/sxt/signup.mo">
+                    <a class="iconlabel" title="회원가입" href="${pageContext.request.contextPath}/sxt/signup.mo">
                         <i class="bi bi-person-add"></i>
                         <label class="iconlabeltext">회원가입</label>
                     </a>
-                    <a class="iconlabel" title="마이페이지" href="/sxt/mypage.mo">
+                    <a class="iconlabel" title="마이페이지" href="${pageContext.request.contextPath}/sxt/mypage.mo">
                         <i class="bi bi-person-circle"></i>
                         <label class="iconlabeltext">마이페이지</label>
                     </a>
@@ -40,7 +40,6 @@
         </div>
         <hr style=" margin:0;clear:both;">
     </header>
-<script src='function.js'></script>
 <script>
 	function logoutConfirm(){
 		if( confirm("정말 로그아웃하시겠습니까?")){

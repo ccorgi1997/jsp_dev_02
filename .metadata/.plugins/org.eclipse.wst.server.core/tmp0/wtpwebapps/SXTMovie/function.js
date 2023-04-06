@@ -149,7 +149,7 @@ function ticketing_dp(){
 		}
 	});
 	
- // 로그인 submit validation
+ // 회원가입 submit validation
 
 function signupValidation(){
 		
