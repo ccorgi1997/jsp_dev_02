@@ -81,7 +81,6 @@
 	                temp_html = `<label id="bonew">\${boxOfficeList[i].rankOldAndNew}</label><label id="borank">\${boxOfficeList[i].rank}</label><label id="botitle">\${boxOfficeList[i].movieNm}</label>`
 	           	}
 	           	$('#boxoffice').html(temp_html);
-	           	console.log(temp_html);
 	           	i++;
 	           	if(i==10){i = 0;} 
 			  }

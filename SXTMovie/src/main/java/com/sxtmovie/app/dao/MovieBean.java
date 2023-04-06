@@ -10,6 +10,7 @@ public class MovieBean {
 	private String movieOpDate;
 	private String movieDday;
 	private String movieAge;
+	private String movieHref;
 
 	public int getMovieRank() {
 		return movieRank;
@@ -58,6 +59,12 @@ public class MovieBean {
 	}
 	public void setMovieAge(String movieAge) {
 		this.movieAge = movieAge;
+	}
+	public String getMovieHref() {
+		return movieHref;
+	}
+	public void setMovieHref(String movieHref) {
+		this.movieHref = movieHref;
 	}
 	
 }

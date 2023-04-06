@@ -2,7 +2,9 @@ package com.sxtmovie.action;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -48,7 +50,7 @@ public class Crawler{
 					
 					movie.setMovieDday(li.getElementsByTag("em").text().trim()); 
 					movie.setMovieAge(li.getElementsByTag("i").text().trim());
-					
+					movie.setMovieHref(li.getElementsByTag("a").attr("href").trim());
 					movieList.add(movie);
 				}
 			}
@@ -57,4 +59,21 @@ public class Crawler{
 		return movieList;
 		
 	}
+	
+	public Map<String, String> DetailCrawlerAction(String detailUrl) throws IOException{
+		
+		Map<String, String> detailData = new HashMap<>();
+		String url= detailUrl;
+		Document document = Jsoup.connect(detailUrl).get();  
+		Elements contents = document.getElementsByClass("box-contents");
+		Element detail = contents.get(0);
+		String movieEt = detail.getElementsByTag("p").text().trim();
+		String movieStory = document.getElementsByClass("sect-story-movie").text().trim(); 
+		
+		detailData.put("movieEt", movieEt);
+		detailData.put("movieStory", movieStory);
+		
+		return detailData;
+	}
+ 
 }
