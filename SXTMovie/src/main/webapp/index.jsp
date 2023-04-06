@@ -84,6 +84,5 @@
         </div>
     <footer id="footer"></footer>
 </body>
-
 <script src='function.js'></script>
 </html>

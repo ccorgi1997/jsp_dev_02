@@ -2,10 +2,10 @@
  * 
  */
 // 모든 페이지에 header, footer load
+ 
 $(document).ready(function() {
-
-	$("#header").load("./header.jsp");  // 원하는 파일 경로를 삽입하면 된다
-	$("#footer").load("./footer.html");  // 원하는 파일 경로를 삽입하면 된다
+	$("#header").load("/header.jsp");  // 원하는 파일 경로를 삽입하면 된다
+	$("#footer").load("/footer.html");  // 원하는 파일 경로를 삽입하면 된다
 });
 // 리뷰 페이지 datepicker - 오늘 이후로는 선택 불가
 

@@ -7,5 +7,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="LoginAction" parameterType="hashmap" resultType="int">
 		SELECT count(*) FROM USERS WHERE USERID = #{userId} AND USERPW = #{userPw}
 	</select>
-
+	
+	<select id="ReviewSelect" parameterType="string" resultType="reviewbean">
+		SELECT * FROM REVIEWS WHERE USERID = #{userId}
+	</select>
+	
+	<select id="TicketSelect" parameterType="string" resultType="ticketbean">
+		SELECT * FROM TICKETS WHERE USERID = #{userId}
+	</select>	
+	
 </mapper>

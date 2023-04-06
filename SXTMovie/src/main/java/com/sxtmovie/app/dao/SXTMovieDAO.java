@@ -1,6 +1,7 @@
 package com.sxtmovie.app.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -30,6 +31,13 @@ public class SXTMovieDAO {
 		
 		return result;
 	}
+	
+	public List<TicketBean> TicketSelect(String userId){
+		return sqlsession.selectList("SXTMovie.TicketSelect", userId); 
+	}
  
+	public List<ReviewBean> ReviewSelect(String userId){
+		return sqlsession.selectList("SXTMovie.ReviewSelect", userId); 
+	}
 }
 

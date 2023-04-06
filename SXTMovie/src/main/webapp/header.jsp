@@ -31,10 +31,20 @@
                         <i class="bi bi-person-add"></i>
                         <label class="iconlabeltext">회원가입</label>
                     </a>
-                    <a class="iconlabel" title="마이페이지" href="${pageContext.request.contextPath}/sxt/mypage.mo">
-                        <i class="bi bi-person-circle"></i>
-                        <label class="iconlabeltext">마이페이지</label>
-                    </a>
+                	<c:choose>
+                		<c:when test="${empty sessionScope.userId}">
+		                    <a class="iconlabel" title="마이페이지" href="${pageContext.request.contextPath}/sxt/login.mo">
+		                        <i class="bi bi-person-circle"></i>
+		                        <label class="iconlabeltext">마이페이지</label>
+		                    </a>
+                		</c:when>
+                		<c:otherwise>
+		                    <a class="iconlabel" title="마이페이지" href="${pageContext.request.contextPath}/sxt/MypageAction.mo">
+		                        <i class="bi bi-person-circle"></i>
+		                        <label class="iconlabeltext">마이페이지</label>
+		                    </a>             			
+                		</c:otherwise>
+                	</c:choose>                    
                 </div>
             </div>
         </div>
