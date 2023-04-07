@@ -16,7 +16,7 @@ body {
 }
 hr{
 	border-radius:5px;
-}
+} 
 /* ----------------------------	헤더 ----------------------------*/
 .header {
 	width: 65%;
@@ -145,11 +145,15 @@ footer {
     max-width: 100% !important;
     transform: translateY(-50%);
 }
-
+ 
 .cardset{
     display:flex !important;
     justify-content: center!important;
     align-items: center!important;
+    flex-direction:column;
+    margin-right: calc(0.03 * var(--bs-gutter-x))!important;
+    margin-left: calc(0.03 * var(--bs-gutter-x))!important;
+    
 }
 #cardcontainer{
 	 max-width:65% !important;
@@ -160,12 +164,47 @@ footer {
 }
 
 .card_moviechart{
-	
+	display:block !important;
+	position: relative;
+	overflow:hidden;
     margin : 0 !important;
     padding: 0 !important
 
 }
+.card_slide {
+	position: relative; display : flex;
+	clear: both;
+	left: 0;
+	top: 0;
+	width: 400%; /* 슬라이드할 사진과 마진 총 넓이 */
+	transition: left 0.5s ease-out;
+	display: flex;
+}
 
+.controller span{
+  position:absolute;
+  background-color: transparent;
+  color:  #4346FF;
+  font-weight:bolder;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  top: 50%;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.controller span:hover{
+  background-color: rgba(128, 128, 128, 0.11);
+}
+
+.prev{
+  left: -40px;
+}
+ 
+
+.next{
+  right: -40px;
+}
 .card_posterFrame{
     width: 11rem !important;
     padding-left : 0 !important;
@@ -222,6 +261,7 @@ footer {
     width: auto !important;
     margin-top: 20px !important;
     margin-bottom: 20px!important;
+    margin-left:0px !important;
 }
 
 /* 차트 더 보기 버튼 */
@@ -275,13 +315,27 @@ footer {
 .card-title{
     text-align: right;
     font-size:1rem !important;
+    width:115px;
+    max-width:115px;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+    float:right;
+    word-break:keep-all;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    
 }
 
 /* 예매율, 골든 */
 .card-text{
+	float:right;
     font-weight: lighter;
     font-size: small;
     text-align: right;
+}
+.card_moviechart .card-text{
+	margin-right:0px !important;
 }
 .cardimg {
 	position : relative;
@@ -289,10 +343,10 @@ footer {
 .cardimg > strong{
 	position : absolute;
 	color: #FF0088;
-	font-size:50px;
+	font-size:45px;
 	font-weight:bolder;
-	bottom:-22%;
-	left:2%;
+	bottom:-20%;
+	left:0%;
 	
 }
 /* 	------------------------차트---------------------------	*/
@@ -521,6 +575,7 @@ main {
 	border-radius: 6px;
 	font-weight: bold;
 	margin-right: 10px;
+	cursor : pointer;
 }
 
 #detail_tb, #review_sb, #detail_tb_ac{
