@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
  		<typeAlias type="com.sxtmovie.app.dao.TicketBean" alias = "ticketbean"/>
  		<typeAlias type="com.sxtmovie.app.dao.ReviewBean" alias = "reviewbean"/>
+ 		<typeAlias type="com.sxtmovie.app.dao.UserBean" alias = "userbean"/>
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">

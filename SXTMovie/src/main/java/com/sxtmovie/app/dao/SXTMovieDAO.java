@@ -43,5 +43,14 @@ public class SXTMovieDAO {
 	public int DblCheck(String userId) {
 		return sqlsession.selectOne("SXTMovie.DblCheck",userId); 
 	}
+	
+	public boolean SignUpAction(UserBean userbean) {
+		
+		boolean result = false;
+		int cnt = sqlsession.insert("SXTMovie.SignupAction",userbean); 
+		if(cnt==1) {result = true;}
+		
+		return result;
+	}
 }
 

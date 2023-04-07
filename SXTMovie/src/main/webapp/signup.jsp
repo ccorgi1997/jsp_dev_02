@@ -22,7 +22,7 @@
                 <h1>신규 회원가입</h1>
                 <hr style="border: solid 2px #4346FF ">
             </div>
-            <form action="" name="signup_form" id="signup_form" align="center" method="post">
+            <form action="${pageContext.request.contextPath}/sxt/SignupAction.mo" name="signup_form" id="signup_form" align="center" method="post">
                 <div id="signup_Id" style="position:relative;">
                     <label class="signup_label">회원 아이디</label>
                     <input type="text" name="userId" id="userId" class="signup_input" placeholder="영문, 숫자 혼합 8~15자">

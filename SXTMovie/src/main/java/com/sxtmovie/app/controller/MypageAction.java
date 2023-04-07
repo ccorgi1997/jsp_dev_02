@@ -21,6 +21,7 @@ public class MypageAction implements Action {
 		
 		req.setAttribute("TicketList", mdao.TicketSelect(userId));
 		req.setAttribute("ReviewList", mdao.ReviewSelect(userId)); 
+		
 		forward.setRedirect(false);
 		forward.setPath("/mypage.jsp");
 		

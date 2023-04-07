@@ -18,5 +18,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="DblCheck" parameterType="string" resultType="int">
 		SELECT count(*) FROM USERS WHERE USERID = #{userId}
-	</select>	
+	</select>
+	
+	<insert id="SignupAction" parameterType="userbean">
+		INSERT INTO USERS VALUES (#{userId},#{userPw},#{userBirth},#{userPhone})
+	</insert>	
 </mapper>
