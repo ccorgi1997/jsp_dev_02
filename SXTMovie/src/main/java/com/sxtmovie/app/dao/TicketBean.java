@@ -7,7 +7,7 @@ public class TicketBean {
 	private int ticketNum;
 	private String userId;
 	private String movieTitle;
-	private Date movieDate;
+	private String movieDate;
 	private String seatNum;
 	
 	public int getTicketNum() {
@@ -28,10 +28,10 @@ public class TicketBean {
 	public void setMovieTitle(String movieTitle) {
 		this.movieTitle = movieTitle;
 	}
-	public Date getMovieDate() {
+	public String getMovieDate() {
 		return movieDate;
 	}
-	public void setMovieDate(Date movieDate) {
+	public void setMovieDate(String movieDate) {
 		this.movieDate = movieDate;
 	}
 	public String getSeatNum() {

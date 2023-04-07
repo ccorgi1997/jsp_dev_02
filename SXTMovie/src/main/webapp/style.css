@@ -523,13 +523,13 @@ main {
 	margin-right: 10px;
 }
 
-#detail_tb, #review_sb {
+#detail_tb, #review_sb, #detail_tb_ac{
 	background-color: #4346FF;
 	color: white;
 	border: none;
 }
 
-#detail_rb {
+#detail_rb, #detail_rb_ac {
 	background-color: white;
 	color: #4346FF;
 	border: 3px solid #4346FF;
@@ -545,7 +545,7 @@ main {
 	font-size: 15px;
 }
 /* 	------------------------리뷰---------------------------	*/
-#detail_rb {
+#detail_rb,#detail_rb_ac {
 	background-color: white;
 	color: #4346FF;
 	border: 3px solid #4346FF;

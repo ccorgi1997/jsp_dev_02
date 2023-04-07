@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>&lt;SXT&gt; 무비차트</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 	                        예매율 <span>${movie.movieRvRate }</span> | 
 	                        🥚 <span>${movie.movieGeRate }</span>
 	                    </p>
-	                    <button class="card_button">예매하기</button>
+	                    <button class="card_button" onclick="window.location.href='${pageContext.request.contextPath}/sxt/ticketing.mo?movieTitle=${movie.movieTitle}&movieAge=${movie.movieAge}'">예매하기</button>
 	                </div>
 	            </div>
         	</c:forEach>

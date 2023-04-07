@@ -213,3 +213,5 @@ function signupValidation(){
 		alert("회원가입 성공!")
 		sf.submit();
 }
+
+// 리뷰페이지 폼

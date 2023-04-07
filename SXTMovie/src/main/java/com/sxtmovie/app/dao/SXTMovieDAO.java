@@ -52,5 +52,14 @@ public class SXTMovieDAO {
 		
 		return result;
 	}
+	
+	public boolean TicketingAction(TicketBean ticketbean) {
+		
+		boolean result = false;
+		int cnt = sqlsession.insert("SXTMovie.TicketingAction",ticketbean); 
+		if(cnt==1) {result = true;}
+		
+		return result;
+	}
 }
 

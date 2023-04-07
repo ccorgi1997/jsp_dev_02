@@ -8,7 +8,7 @@
 <%  %>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>&lt;SXT&gt; 마이페이지</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 	<link rel="stylesheet" href='${pageContext.request.contextPath}/style.css'>

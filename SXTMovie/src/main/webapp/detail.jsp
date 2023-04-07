@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>        
+<% int index = Integer.parseInt(request.getParameter("movieRank"))-1;
+	pageContext.setAttribute("movieRank", index); 
+%>
+<c:set var="movieData" value="${MovieList[pageScope.movieRank]}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>&lt;SXT&gt; ${movieData.movieTitle}</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<link rel="stylesheet" href='${pageContext.request.contextPath}/style.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -18,10 +22,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
-<% int index = Integer.parseInt(request.getParameter("movieRank"))-1;
-	pageContext.setAttribute("movieRank", index); 
-%>
-<c:set var="movieData" value="${MovieList[pageScope.movieRank]}"/>
     <header id="header"></header>
     <main>
         <div class="detail_imgarea">
@@ -62,8 +62,8 @@
                 			 onclick="window.location.href='${pageContext.request.contextPath}/sxt/login.mo'"> 
                 		</c:when>
                 		<c:otherwise>
-   			           		 <input class="detail_bt" id="detail_tb" type="submit" value="예매하기">
-               				 <input class="detail_bt" id="detail_rb" type="submit" value="내 리뷰 남기기">    			
+   			           		 <input class="detail_bt" id="detail_tb_ac" type="submit" value="예매하기">
+               				 <input class="detail_bt" id="detail_rb_ac" type="submit" value="내 리뷰 남기기">    			
                 		</c:otherwise>
                 	</c:choose>              
             </form>
@@ -75,6 +75,13 @@
  	$(document).ready(function() {
 		$("#header").load("/header.jsp");  // 원하는 파일 경로를 삽입하면 된다
 		$("#footer").load("/footer.html");  // 원하는 파일 경로를 삽입하면 된다
-	});
+	}); 
+ 
+</script>
+<script>
+	$('#detail_tb_ac').click(function(){
+		$('#detail_forward').attr('action','${pageContext.request.contextPath}/sxt/ticketing.mo')
+		$('#detail_forward').submit();
+	})
 </script>
 </html>

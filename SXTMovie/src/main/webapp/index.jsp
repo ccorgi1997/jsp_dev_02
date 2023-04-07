@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>&lt;SXT&gt; HOME</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<link rel="stylesheet" href='style.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -60,9 +60,10 @@
 					        <c:if test="${movie.movieRank eq 5 }">
 					            <c:set var="loop_flag" value="true" />
 					        </c:if>
-		                    <div class="col card_frameset">
+		                    <div class="col card_frameset" >
 		                        <div class="row cardset">
-		                            <div class="card text-center card_posterFrame">
+		                            <div class="card text-center card_posterFrame" onclick="location.href=
+		                            '${pageContext.request.contextPath}/sxt/DetailAction.mo?movieRank=${movie.movieRank }&movieHref=http://www.cgv.co.kr${movie.movieHref }'" style="cursor:pointer;">
 		                            	<div class="cardimg">
 		                            		<strong>${movie.movieRank}</strong>
 			                                <img src= "${movie.movieImgsrc}" class="card-img-top" alt="${movie.movieRank }+위">
@@ -74,7 +75,8 @@
 		                                    </h6>
 		                                </div>
 		                            </div>
-		                            <a href="#" class="btn btn-primary ticketing">예매하기</a>
+		                            <a href="${pageContext.request.contextPath}/sxt/ticketing.mo?movieTitle=${movie.movieTitle}&movieAge=${movie.movieAge}'" 
+		                            class="btn btn-primary ticketing">예매하기</a>
 		                        </div>
 		                    </div>
 					    </c:if>        			

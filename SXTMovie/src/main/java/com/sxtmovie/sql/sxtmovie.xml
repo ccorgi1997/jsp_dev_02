@@ -23,4 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="SignupAction" parameterType="userbean">
 		INSERT INTO USERS VALUES (#{userId},#{userPw},#{userBirth},#{userPhone})
 	</insert>	
+	
+	<insert id="TicketingAction" parameterType="ticketbean">
+		INSERT INTO TICKETS VALUES (tickets_seq.NEXTVAL,#{userId},#{movieTitle},#{movieDate},#{seatNum})
+	</insert>	
 </mapper>
