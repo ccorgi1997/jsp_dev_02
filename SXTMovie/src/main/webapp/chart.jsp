@@ -48,7 +48,14 @@
 	                        예매율 <span>${movie.movieRvRate }</span> | 
 	                        🥚 <span>${movie.movieGeRate }</span>
 	                    </p>
-	                    <button class="card_button" onclick="window.location.href='${pageContext.request.contextPath}/sxt/ticketing.mo?movieTitle=${movie.movieTitle}&movieAge=${movie.movieAge}'">예매하기</button>
+	                	<c:choose>
+	                		<c:when test="${empty sessionScope.userId}">
+	                			<button class="card_button" onclick="alert('로그인 후 이용해 주세요.'); window.location.href='${pageContext.request.contextPath}/sxt/login.mo'">예매하기</button>	
+	                		</c:when>
+	                		<c:otherwise>
+			                    <button class="card_button" onclick="window.location.href='${pageContext.request.contextPath}/sxt/ticketing.mo?movieTitle=${movie.movieTitle}&movieAge=${movie.movieAge}'">예매하기</button>
+	                		</c:otherwise>
+	                	</c:choose>  	                    
 	                </div>
 	            </div>
         	</c:forEach>

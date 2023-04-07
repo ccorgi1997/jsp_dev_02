@@ -75,8 +75,15 @@
 		                                    </h6>
 		                                </div>
 		                            </div>
-		                            <a href="${pageContext.request.contextPath}/sxt/ticketing.mo?movieTitle=${movie.movieTitle}&movieAge=${movie.movieAge}'" 
-		                            class="btn btn-primary ticketing">예매하기</a>
+				                	<c:choose>
+				                		<c:when test="${empty sessionScope.userId}">
+				                            <a onclick="alert('로그인 후 이용해 주세요.')" href="${pageContext.request.contextPath}/sxt/login.mo" class="btn btn-primary ticketing">예매하기</a>				                		
+				                		</c:when>
+				                		<c:otherwise>
+				                            <a href="${pageContext.request.contextPath}/sxt/ticketing.mo?movieTitle=${movie.movieTitle}&movieAge=${movie.movieAge}'" 
+				                            class="btn btn-primary ticketing">예매하기</a>
+				                		</c:otherwise>
+				                	</c:choose>		                            
 		                        </div>
 		                    </div>
 					    </c:if>        			

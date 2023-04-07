@@ -57,9 +57,9 @@
                 	<c:choose>
                 		<c:when test="${empty sessionScope.userId}">
                				 <input class="detail_bt" id="detail_tb" type="button" value="예매하기"
-               				 onclick="window.location.href='${pageContext.request.contextPath}/sxt/login.mo'">
+               				 onclick="alert('로그인 후 이용해 주세요.');window.location.href='${pageContext.request.contextPath}/sxt/login.mo'">
                 			 <input class="detail_bt" id="detail_rb" type="button" value="내 리뷰 남기기"
-                			 onclick="window.location.href='${pageContext.request.contextPath}/sxt/login.mo'"> 
+                			 onclick="alert('로그인 후 이용해 주세요.');window.location.href='${pageContext.request.contextPath}/sxt/login.mo'"> 
                 		</c:when>
                 		<c:otherwise>
    			           		 <input class="detail_bt" id="detail_tb_ac" type="submit" value="예매하기">
