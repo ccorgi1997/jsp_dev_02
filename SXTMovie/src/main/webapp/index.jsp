@@ -27,10 +27,13 @@
 <body>
 	<header id="header"></header>
 	<div class="container c_banner">
-		<div class="row main_banner">
-			<img
+		<div class="row main_banner" style="max-height:700px !important; position:relative;">
+			<video id="videoplayer" autoplay muted>
+				<source src="https://adimg.cgv.co.kr/images/202303/johnwick4/main_johnwick4_1080x608.mp4" type="video/mp4">
+			</video>
+<!-- 			<img
 				src="https://caching2.lottecinema.co.kr/lotte_image/2023/JohnWick/JohnWick_1920774.jpg"
-				class="banner_img" alt="...">
+				class="banner_img" alt="..."> -->
 			<div class="col banner_set">
 				<div class="col">
 					<h1 id="movie_name">존 윅 4</h1>
@@ -42,8 +45,8 @@
 							<a href="#" class="btn btn-dark detail_b"> 상세보기&nbsp;&nbsp;>
 							</a>
 						</div>
-						<i class="bi bi-pause-circle pause"> </i> <i
-							class="bi bi-volume-mute mute"> </i>
+						<i class="bi bi-pause-circle pause" onclick="pause()"> </i> 
+						<i class="bi bi-volume-mute mute" ></i>
 					</div>
 				</div>
 			</div>
@@ -128,5 +131,37 @@
 		  moveSlide(currentIdx + 1);
 		}
 	});
+	let video = $('#videoplayer').get(0)
+	function pause(){
+        if(video.paused){
+        	video.play();
+        }else{
+        	video.pause();
+        }
+	}
+/* 	let video = $('#video')
+    $('#').on({
+        click:function(){
+            if(movieSelectionVideoObj.paused){
+                movieSelectionVideoObj.play();
+                $(this).addClass('active');
+            }else{
+                movieSelectionVideoObj.pause();
+                $(this).removeClass('active');
+            }
+        }
+    });
+
+    $('.btn_movieSelection_soundOnOff').on({
+        click:function(){
+            if(movieSelectionVideoObj.muted){
+                movieSelectionVideoObj.muted = false;
+                $(this).addClass('active');
+            }else{
+                movieSelectionVideoObj.muted = true;
+                $(this).removeClass('active');
+            }
+        }
+    }); */	 
 </script>
 </html>

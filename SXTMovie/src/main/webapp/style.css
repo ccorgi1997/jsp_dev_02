@@ -124,6 +124,11 @@ footer {
     max-width:100% !important;
     padding:0px !important;
     overflow: hidden;
+    min-height:700px;
+}
+.c_banner video {
+	position:absolute;
+	top:-77px;
 }
 .main-banner img{
 	height:350px !important;
@@ -141,7 +146,7 @@ footer {
     color: white;
     padding-left: 5% !important;
     left:13%;
-    top: 60%;
+    top: 500px;
     max-width: 100% !important;
     transform: translateY(-50%);
 }
