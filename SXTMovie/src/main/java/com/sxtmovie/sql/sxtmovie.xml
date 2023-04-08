@@ -27,4 +27,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="TicketingAction" parameterType="ticketbean">
 		INSERT INTO TICKETS VALUES (tickets_seq.NEXTVAL,#{userId},#{movieTitle},#{movieDate},#{seatNum})
 	</insert>	
+	
+	<insert id="ReviewAction" parameterType="reviewbean">
+		INSERT INTO REVIEWS VALUES (reviews_seq.NEXTVAL,#{userId},#{movieTitle},#{reviewDate},#{comments},#{star} )
+	</insert>		
 </mapper>

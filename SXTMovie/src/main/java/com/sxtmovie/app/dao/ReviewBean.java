@@ -7,7 +7,7 @@ public class ReviewBean {
 	private int reviewNum;
 	private String userId;
 	private String movieTitle;
-	private Date reviewDate;
+	private String reviewDate;
 	private String comments;
 	private int star;
 	
@@ -29,10 +29,10 @@ public class ReviewBean {
 	public void setMovieTitle(String movieTitle) {
 		this.movieTitle = movieTitle;
 	}
-	public Date getReviewDate() {
+	public String getReviewDate() {
 		return reviewDate;
 	}
-	public void setReviewDate(Date reviewDate) {
+	public void setReviewDate(String reviewDate) {
 		this.reviewDate = reviewDate;
 	}
 	public String getComments() {

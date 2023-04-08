@@ -214,13 +214,14 @@ footer {
     width: 11rem !important;
     padding-left : 0 !important;
     padding-right : 0 !important;
+    min-height:335px;
 }
 
 .card_frameset {
     /*border: 2px solid yellow;*/
     position: relative;
 }
-
+ 
 .chart_text {
     /*border : 2px solid #051b11;*/
     margin-top: 60px !important;
@@ -334,7 +335,9 @@ footer {
 
 /* 예매율, 골든 */
 .card-text{
-	float:right;
+	position:absolute;
+	bottom:10px;
+	right:10px;
     font-weight: lighter;
     font-size: small;
     text-align: right;
@@ -827,6 +830,7 @@ main {
         text-overflow: ellipsis;
         max-width: 50%;
         top:5px;
+        left:20%;
     } 
     .mp_rvlist{
         position:relative;

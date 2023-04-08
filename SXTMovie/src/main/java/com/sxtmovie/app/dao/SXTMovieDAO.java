@@ -61,5 +61,14 @@ public class SXTMovieDAO {
 		
 		return result;
 	}
+	
+	public boolean ReviewAction(ReviewBean reviewbean) {
+		
+		boolean result = false;
+		int cnt = sqlsession.insert("SXTMovie.ReviewAction",reviewbean); 
+		if(cnt==1) {result = true;}
+		
+		return result;
+	}
 }
 

@@ -53,6 +53,7 @@
             <form name="detail_forward" id="detail_forward" action="" method="post">
             <input type="hidden" value="${movieData.movieTitle }" name="movieTitle">
             <input type="hidden" value="${movieData.movieAge}" name="movieAge">
+            <input type="hidden" value="${movieData.movieImgsrc}" name="movieImgsrc">
             <input type="hidden" value="${movieEt }" name="movieEt">
                 	<c:choose>
                 		<c:when test="${empty sessionScope.userId}">
@@ -83,5 +84,9 @@
 		$('#detail_forward').attr('action','${pageContext.request.contextPath}/sxt/ticketing.mo')
 		$('#detail_forward').submit();
 	})
+	$('#detail_rb_ac').click(function(){
+		$('#detail_forward').attr('action','${pageContext.request.contextPath}/sxt/review.mo')
+		$('#detail_forward').submit();
+	})	
 </script>
 </html>

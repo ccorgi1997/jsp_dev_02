@@ -63,10 +63,10 @@
     let day = yy+mm+dd;
     let i = 0;
     
-/*     $(function(){
+	$(function(){
     	setInterval(boxoffice,2000);
     });
-     */
+    
     function boxoffice(){
  		$.ajax({
 			  type: "GET", // GET 방식으로 요청한다.
