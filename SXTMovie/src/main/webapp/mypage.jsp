@@ -18,6 +18,7 @@
 <body>
 	<c:set var="TicketList" value="${requestScope.TicketList }"></c:set>
 	<c:set var="ReviewList" value="${requestScope.ReviewList }"></c:set>
+	
     <header id="header"></header>
     <main>
         <div class="mp_title">
@@ -54,9 +55,11 @@
             	</c:when>
             	<c:otherwise>
             		<c:forEach var="review" items = "${ReviewList}" varStatus="status">
+            		<c:set var="comment" value="${review.comments}"/>
+            		<c:set var="replaced_comment" value='${fn:replace(comment,  "\'", "&#39;")}'/>
             			<div class="mp_rvlist">
 			                <span class="mp_mvtitle"  style="cursor:pointer;" 
-			                onclick="popup_open('${review.comments}','${status.index }')">
+			                onclick='popup_open("${replaced_comment}","${status.index }")'>
 			                ${review.movieTitle }</span>
 			                <i class="bi bi-dash-square-fill mp_icon rv_icon deleteReview" 
 			                onclick="reviewDelete(${review.reviewNum})"></i>

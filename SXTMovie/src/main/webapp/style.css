@@ -800,11 +800,17 @@ main {
     .mp_blanktxt{
         font-size: 13px;
         text-align: center;
+
     }
     .mp_mvtitle{
         font-size:15px;
         line-height:20px;
         font-weight: bold;
+        display: inline-block;
+        max-width:20%;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
     }
     .mp_mvdate{
         font-size:12px;
@@ -833,9 +839,9 @@ main {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 50%;
+        max-width: 45%;
         top:5px;
-        left:20%;
+        left:15%;
         line-height:19px;
     } 
     .mp_rvlist{
