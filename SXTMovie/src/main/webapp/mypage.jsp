@@ -35,7 +35,8 @@
             		<c:forEach var="ticket" items = "${TicketList }">
 			            <div class="mp_tklist">
 			                <span class="mp_mvtitle">${ticket.movieTitle }</span>
-			                <i class="bi bi-dash-square-fill mp_icon" ></i>
+			                <i class="bi bi-dash-square-fill mp_icon deleteTicket" 
+			                onclick="ticketDelete(${ticket.ticketNum })"></i>
 			                <span class="mp_seats">${ticket.seatNum }</span>
 			                <span class="mp_mvdate">${fn:substring(ticket.movieDate,0,10) }</span>
 			            </div>
@@ -57,7 +58,8 @@
 			                <span class="mp_mvtitle"  style="cursor:pointer;" 
 			                onclick="popup_open('${review.comments}','${status.index }')">
 			                ${review.movieTitle }</span>
-			                <i class="bi bi-dash-square-fill mp_icon rv_icon" ></i>
+			                <i class="bi bi-dash-square-fill mp_icon rv_icon deleteReview" 
+			                onclick="reviewDelete(${review.reviewNum})"></i>
 			                <span class="mp_stars" >
 			                	<c:forEach var="i" begin="1" end="${review.star}" step="1">⭐</c:forEach>
 			                </span>
@@ -115,6 +117,20 @@
 </body>
 <script src='${pageContext.request.contextPath}/function.js'></script>
 <script>
+
+ 
+	function ticketDelete(ticketNum){
+		if(confirm('예매를 취소하시겠습니까?')){
+			alert('예매가 취소되었습니다.')
+			location.href='/sxt/TicketDeleteAction.mo?ticketNum='+ticketNum
+		}
+	}
+	function reviewDelete(reviewNum){
+		if(confirm('리뷰를 삭제하시겠습니까?')){
+			alert('리뷰가 삭제되었습니다.')
+			location.href='/sxt/ReviewDeleteAction.mo?reviewNum='+reviewNum
+		}
+	}
 	function popup_open(comment,index){
 		let temp_html = `
 		      <p class='popup_comment'>\${comment}</p>

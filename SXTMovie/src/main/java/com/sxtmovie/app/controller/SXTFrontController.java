@@ -42,6 +42,8 @@ public class SXTFrontController extends HttpServlet{
 		 	case "/sxt/SignupAction.mo" : forward = new SignupAction().execute(request,response); break;
 		 	case "/sxt/TicketingAction.mo" : forward = new TicketingAction().execute(request,response); break;
 		 	case "/sxt/ReviewAction.mo" : forward = new ReviewAction().execute(request,response); break;
+		 	case "/sxt/ReviewDeleteAction.mo" : forward = new ReviewDeleteAction().execute(request,response); break;
+		 	case "/sxt/TicketDeleteAction.mo" : forward = new TicketDeleteAction().execute(request,response); break;
 		 }
 		 
 		 // 전송에 대한 일괄처리

@@ -30,5 +30,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="ReviewAction" parameterType="reviewbean">
 		INSERT INTO REVIEWS VALUES (reviews_seq.NEXTVAL,#{userId},#{movieTitle},#{reviewDate},#{comments},#{star} )
-	</insert>		
+	</insert>	
+	
+	<delete id="DeleteReview" parameterType="_int">
+		DELETE FROM REVIEWS WHERE REVIEWNUM = #{reviewNum}
+	</delete>	
+	 
+	<delete id="DeleteTicket" parameterType="_int">
+		DELETE FROM TICKETS WHERE TICKETNUM = #{ticketNum}
+	</delete>	
 </mapper>

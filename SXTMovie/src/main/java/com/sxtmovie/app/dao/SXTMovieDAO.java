@@ -70,5 +70,23 @@ public class SXTMovieDAO {
 		
 		return result;
 	}
+	
+	public boolean DeleteReview(int reviewNum) {
+		
+		boolean result = false;
+		int cnt = sqlsession.delete("SXTMovie.DeleteReview",reviewNum); 
+		if(cnt==1) {result = true;}
+		
+		return result;
+	}
+	
+	public boolean DeleteTicket(int ticketNum) {
+		
+		boolean result = false;
+		int cnt = sqlsession.delete("SXTMovie.DeleteTicket",ticketNum); 
+		if(cnt==1) {result = true;}
+		
+		return result;
+	}
 }
 
