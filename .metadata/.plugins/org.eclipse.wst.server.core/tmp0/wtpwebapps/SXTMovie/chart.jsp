@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>&lt;SXT&gt; 무비차트</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -23,30 +23,39 @@
 	            <div class="chart_cardarea">
 	                <div class="chart_card">
 	                    <div class="card_rank">${movie.movieRank }</div>
-	                    <img class="card_img" src="${movie.movieImgsrc}">
-	                    <div style=" display:inline-flex;margin:10px auto;" >
-	                    	<c:choose>
-	                    		<c:when test="${movie.movieAge eq '12'}">
-				                    <button class="ratebutton"  style="background-color:#F2E503" value="${movie.movieAge}" >${movie.movieAge }</button>
-	                    		</c:when>
-	                    		<c:when test="${movie.movieAge eq '15'}">
-				                    <button class="ratebutton"  style="background-color:#FAC710" value="${movie.movieAge}" >${movie.movieAge }</button>
-	                    		</c:when>
-	                    		<c:when test="${movie.movieAge eq '18'}">
-				                    <button class="ratebutton"  style="background-color:#DA0063" value="${movie.movieAge}" >${movie.movieAge }</button>
-	                    		</c:when>
-	                    		<c:otherwise>
-				                    <button class="ratebutton" value="${movie.movieAge}" >${movie.movieAge }</button>
-	                    		</c:otherwise>	                    			                    		
-	                    	</c:choose>
-		                    <h5 class="ctcard_title">${movie.movieTitle}</h5>
-	                    </div>
+	                    <a href="${pageContext.request.contextPath}/sxt/DetailAction.mo?movieRank=${movie.movieRank }&movieHref=http://www.cgv.co.kr${movie.movieHref }">
+		                    <img class="card_img" src="${movie.movieImgsrc}">
+		                    <div style=" display:inline-flex;margin:10px auto;" >
+		                    	<c:choose>
+		                    		<c:when test="${movie.movieAge eq '12'}">
+					                    <button class="ratebutton"  style="background-color:#F2E503" value="${movie.movieAge}" >${movie.movieAge }</button>
+		                    		</c:when>
+		                    		<c:when test="${movie.movieAge eq '15'}">
+					                    <button class="ratebutton"  style="background-color:#FAC710" value="${movie.movieAge}" >${movie.movieAge }</button>
+		                    		</c:when>
+		                    		<c:when test="${movie.movieAge eq '18'}">
+					                    <button class="ratebutton"  style="background-color:#DA0063" value="${movie.movieAge}" >${movie.movieAge }</button>
+		                    		</c:when>
+		                    		<c:otherwise>
+					                    <button class="ratebutton" value="${movie.movieAge}" >${movie.movieAge }</button>
+		                    		</c:otherwise>	                    			                    		
+		                    	</c:choose>
+			                    <h5 class="ctcard_title" style="color:black;">${movie.movieTitle}</h5>
+		                    </div>
+	                    </a>
 	                    <p class="card_detail">
 	                    	<span class="card_dday">${movie.movieDday }</span>
 	                        예매율 <span>${movie.movieRvRate }</span> | 
 	                        🥚 <span>${movie.movieGeRate }</span>
 	                    </p>
-	                    <button class="card_button">예매하기</button>
+	                	<c:choose>
+	                		<c:when test="${empty sessionScope.userId}">
+	                			<button class="card_button" onclick="alert('로그인 후 이용해 주세요.'); window.location.href='${pageContext.request.contextPath}/sxt/login.mo'">예매하기</button>	
+	                		</c:when>
+	                		<c:otherwise>
+			                    <button class="card_button" onclick="window.location.href='${pageContext.request.contextPath}/sxt/ticketing.mo?movieTitle=${movie.movieTitle}&movieAge=${movie.movieAge}'">예매하기</button>
+	                		</c:otherwise>
+	                	</c:choose>  	                    
 	                </div>
 	            </div>
         	</c:forEach>

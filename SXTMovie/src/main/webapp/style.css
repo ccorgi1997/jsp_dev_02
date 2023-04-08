@@ -36,8 +36,9 @@ header > hr{
 	float: left;
 	margin: 48px 10px 0px 0px;
 	width: 200px;
+	max-width: 200px;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 15px; 
 }
 
 .navbar {
@@ -91,6 +92,10 @@ footer {
 
 #botitle {
 	float: right;
+	max-width:170px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
 }
 
 .footerdetail {
@@ -831,9 +836,11 @@ main {
         max-width: 50%;
         top:5px;
         left:20%;
+        line-height:19px;
     } 
     .mp_rvlist{
         position:relative;
+        line-height:27px;
     }
     #mp_lktitle{
         clear:both;
@@ -862,7 +869,7 @@ main {
     .imgarea {
         position: relative;
         width: 13rem; 
-        height: 250px;
+        height: 360px;
         overflow: hidden;
     }
     .imgarea > img {
@@ -894,4 +901,26 @@ main {
         display: flex;
         flex-wrap: wrap;
         margin-left:5%;
+    }
+    .mp_icon{
+    	float:right; 
+    	margin-left:5px; 
+    	font-size:12px;
+    	line-height:20px;
+    }
+    .mp_icon:hover{
+    	color:#ff0088
+    }
+    .rv_icon{
+    	line-height:27px;
+    	color:#4346FF;
+    }
+ 
+    .popup_comment{
+   		display:inline-block;
+   		font-size:12px;
+    }
+    .popup_btn{
+    	 display:inline-block;
+    	 font-size:12px;
     }

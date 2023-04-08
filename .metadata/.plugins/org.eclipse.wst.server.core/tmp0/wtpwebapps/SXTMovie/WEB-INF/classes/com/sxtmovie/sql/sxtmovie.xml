@@ -7,5 +7,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="LoginAction" parameterType="hashmap" resultType="int">
 		SELECT count(*) FROM USERS WHERE USERID = #{userId} AND USERPW = #{userPw}
 	</select>
-
+	
+	<select id="ReviewSelect" parameterType="string" resultType="reviewbean">
+		SELECT * FROM REVIEWS WHERE USERID = #{userId}
+	</select>
+	
+	<select id="TicketSelect" parameterType="string" resultType="ticketbean">
+		SELECT * FROM TICKETS WHERE USERID = #{userId}
+	</select>	
+	
+	<select id="DblCheck" parameterType="string" resultType="int">
+		SELECT count(*) FROM USERS WHERE USERID = #{userId}
+	</select>
+	
+	<insert id="SignupAction" parameterType="userbean">
+		INSERT INTO USERS VALUES (#{userId},#{userPw},#{userBirth},#{userPhone})
+	</insert>	
+	
+	<insert id="TicketingAction" parameterType="ticketbean">
+		INSERT INTO TICKETS VALUES (tickets_seq.NEXTVAL,#{userId},#{movieTitle},#{movieDate},#{seatNum})
+	</insert>	
+	
+	<insert id="ReviewAction" parameterType="reviewbean">
+		INSERT INTO REVIEWS VALUES (reviews_seq.NEXTVAL,#{userId},#{movieTitle},#{reviewDate},#{comments},#{star} )
+	</insert>		
 </mapper>

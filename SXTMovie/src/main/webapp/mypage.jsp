@@ -25,7 +25,7 @@
         </div>
         <div class="mp_area mp_ticket">
             <span class="mp_tktext" id="mp_tktitle">나의 예매내역</span>
-            <span class="mp_tktext" id="mp_tkcnt"><span>0</span>건</span>
+            <span class="mp_tktext" id="mp_tkcnt"><span>${fn:length(TicketList)}</span>건</span>
             <hr class="mp_hr" style = "border:1px solid white;">
             <c:choose >
             	<c:when test="${empty TicketList}">
@@ -35,8 +35,9 @@
             		<c:forEach var="ticket" items = "${TicketList }">
 			            <div class="mp_tklist">
 			                <span class="mp_mvtitle">${ticket.movieTitle }</span>
+			                <i class="bi bi-dash-square-fill mp_icon" ></i>
 			                <span class="mp_seats">${ticket.seatNum }</span>
-			                <span class="mp_mvdate">${ticket.movieDate }</span>
+			                <span class="mp_mvdate">${fn:substring(ticket.movieDate,0,10) }</span>
 			            </div>
             		</c:forEach>
             	</c:otherwise>
@@ -44,24 +45,29 @@
         </div>
         <div class="mp_area mp_review">
             <span class="mp_rvtext" id="mp_rvtitle">내가 남긴 별점</span>
-            <span class="mp_rvtext" id="mp_rvcnt"><span style="color:#4346FF">0</span>건</span>
+            <span class="mp_rvtext" id="mp_rvcnt"><span style="color:#4346FF">${fn:length(ReviewList)}</span>건</span>
             <hr class="mp_hr" style = "border:1px solid #4346FF;">
             <c:choose>
             	<c:when test="${empty ReviewList}">
 		            <p class="mp_rvtext mp_blanktxt" >남긴 별점이 없습니다.</p>
             	</c:when>
             	<c:otherwise>
-            		<c:forEach var="review" items = "${ReviewList}">
+            		<c:forEach var="review" items = "${ReviewList}" varStatus="status">
             			<div class="mp_rvlist">
-			                <span class="mp_mvtitle">${review.movieTitle }</span>
+			                <span class="mp_mvtitle"  style="cursor:pointer;" 
+			                onclick="popup_open('${review.comments}','${status.index }')">
+			                ${review.movieTitle }</span>
+			                <i class="bi bi-dash-square-fill mp_icon rv_icon" ></i>
 			                <span class="mp_stars" >
 			                	<c:forEach var="i" begin="1" end="${review.star}" step="1">⭐</c:forEach>
 			                </span>
 			                <span class="mp_comment">${review.comments}</span>
+			                <div class="comment_popup" id="comment_popup${status.index }"></div> 
 			            </div>
             		</c:forEach>
             	</c:otherwise>
             </c:choose>
+			        
         </div>
         <div class="mp_title" id="mp_lktitle" >
             <h3><i class="bi bi-heart-fill"></i>내가 찜한 영화<hr id="likedhr" style = "border:2px solid #4346FF; "></h3>
@@ -73,7 +79,7 @@
                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg" class="card-img-top" alt="poster">
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
+                        <p class="card-text" style="bottom:-2px; right:5px;"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
                     </div>
                 </div>
                 <div class="card" style="width: 13rem;">
@@ -82,7 +88,7 @@
                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg" class="card-img-top" alt="poster">
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
+                        <p class="card-text" style="bottom:-2px; right:5px;"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
                     </div>
                 </div>
                 <div class="card" style="width: 13rem;">
@@ -91,7 +97,7 @@
                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg" class="card-img-top" alt="poster">
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
+                        <p class="card-text" style="bottom:-2px; right:5px;"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
                     </div>
                 </div>
                 <div class="card" style="width: 13rem;">
@@ -100,17 +106,23 @@
                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg" class="card-img-top" alt="poster">
                     </div>
                     <div class="card-body">
-                        <p class="card-text"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
+                        <p class="card-text" style="bottom:-2px; right:5px;"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
                     </div>
                 </div>
             </div>
     </main>
     <footer id="footer"></footer>
 </body>
- <script >
- 	$(document).ready(function() {
-		$("#header").load("/header.jsp");  // 원하는 파일 경로를 삽입하면 된다
-		$("#footer").load("/footer.html");  // 원하는 파일 경로를 삽입하면 된다
-	});
+<script src='${pageContext.request.contextPath}/function.js'></script>
+<script>
+	function popup_open(comment,index){
+		let temp_html = `
+		      <p class='popup_comment'>\${comment}</p>
+	          <a class='popup_btn' href='javascript:popup_close(\${index});'><i class="bi bi-x-square-fill"></i></a>`
+		$('#comment_popup'+index).html(temp_html);
+	}
+	function popup_close(index){
+		$('#comment_popup'+index).empty();
+	}
 </script>
 </html>

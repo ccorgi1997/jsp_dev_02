@@ -14,6 +14,9 @@ a{
 body {
 	margin: 0px;
 }
+hr{
+	border-radius:5px;
+} 
 /* ----------------------------	헤더 ----------------------------*/
 .header {
 	width: 65%;
@@ -29,12 +32,13 @@ header > hr{
 	float: left;
 }
 
-.boxoffice {
+#boxoffice {
 	float: left;
 	margin: 48px 10px 0px 0px;
 	width: 200px;
+	max-width: 200px;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 15px; 
 }
 
 .navbar {
@@ -88,6 +92,10 @@ footer {
 
 #botitle {
 	float: right;
+	max-width:170px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
 }
 
 .footerdetail {
@@ -121,6 +129,11 @@ footer {
     max-width:100% !important;
     padding:0px !important;
     overflow: hidden;
+    min-height:700px;
+}
+.c_banner video {
+	position:absolute;
+	top:-77px;
 }
 .main-banner img{
 	height:350px !important;
@@ -138,15 +151,19 @@ footer {
     color: white;
     padding-left: 5% !important;
     left:13%;
-    top: 60%;
+    top: 500px;
     max-width: 100% !important;
     transform: translateY(-50%);
 }
-
+ 
 .cardset{
     display:flex !important;
     justify-content: center!important;
     align-items: center!important;
+    flex-direction:column;
+    margin-right: calc(0.03 * var(--bs-gutter-x))!important;
+    margin-left: calc(0.03 * var(--bs-gutter-x))!important;
+    
 }
 #cardcontainer{
 	 max-width:65% !important;
@@ -157,23 +174,59 @@ footer {
 }
 
 .card_moviechart{
-	
+	display:block !important;
+	position: relative;
+	overflow:hidden;
     margin : 0 !important;
     padding: 0 !important
 
 }
+.card_slide {
+	position: relative; display : flex;
+	clear: both;
+	left: 0;
+	top: 0;
+	width: 400%; /* 슬라이드할 사진과 마진 총 넓이 */
+	transition: left 0.5s ease-out;
+	display: flex;
+}
 
+.controller span{
+  position:absolute;
+  background-color: transparent;
+  color:  #4346FF;
+  font-weight:bolder;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  top: 50%;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.controller span:hover{
+  background-color: rgba(128, 128, 128, 0.11);
+}
+
+.prev{
+  left: -40px;
+}
+ 
+
+.next{
+  right: -40px;
+}
 .card_posterFrame{
     width: 11rem !important;
     padding-left : 0 !important;
     padding-right : 0 !important;
+    min-height:335px;
 }
 
 .card_frameset {
     /*border: 2px solid yellow;*/
     position: relative;
 }
-
+ 
 .chart_text {
     /*border : 2px solid #051b11;*/
     margin-top: 60px !important;
@@ -219,6 +272,7 @@ footer {
     width: auto !important;
     margin-top: 20px !important;
     margin-bottom: 20px!important;
+    margin-left:0px !important;
 }
 
 /* 차트 더 보기 버튼 */
@@ -272,13 +326,29 @@ footer {
 .card-title{
     text-align: right;
     font-size:1rem !important;
+    width:115px;
+    max-width:115px;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+    float:right;
+    word-break:keep-all;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    
 }
 
 /* 예매율, 골든 */
 .card-text{
+	position:absolute;
+	bottom:10px;
+	right:10px;
     font-weight: lighter;
     font-size: small;
     text-align: right;
+}
+.card_moviechart .card-text{
+	margin-right:0px !important;
 }
 .cardimg {
 	position : relative;
@@ -286,10 +356,10 @@ footer {
 .cardimg > strong{
 	position : absolute;
 	color: #FF0088;
-	font-size:50px;
+	font-size:45px;
 	font-weight:bolder;
-	bottom:-22%;
-	left:2%;
+	bottom:-20%;
+	left:0%;
 	
 }
 /* 	------------------------차트---------------------------	*/
@@ -502,12 +572,12 @@ main {
 }
 
 #detail_et {
-	font-size: 5px;
+	font-size: 12px;
 	color: grey;
 }
 
 #detail_ct {
-	font-size: 12px;
+	font-size: 15px;
 	text-align: justify;
 	margin-top: 30px;
 }
@@ -518,15 +588,16 @@ main {
 	border-radius: 6px;
 	font-weight: bold;
 	margin-right: 10px;
+	cursor : pointer;
 }
 
-#detail_tb, #review_sb {
+#detail_tb, #review_sb, #detail_tb_ac{
 	background-color: #4346FF;
 	color: white;
 	border: none;
 }
 
-#detail_rb {
+#detail_rb, #detail_rb_ac {
 	background-color: white;
 	color: #4346FF;
 	border: 3px solid #4346FF;
@@ -542,7 +613,7 @@ main {
 	font-size: 15px;
 }
 /* 	------------------------리뷰---------------------------	*/
-#detail_rb {
+#detail_rb,#detail_rb_ac {
 	background-color: white;
 	color: #4346FF;
 	border: 3px solid #4346FF;
@@ -676,3 +747,180 @@ main {
 	background-color: white;
 	border: #ff0088 2px solid;
 }
+/* 	------------------------마이페이지---------------------------	*/
+    .mp_title{
+        text-align:left;
+        font-size:25px;
+    }
+    .mp_title .bi{
+        color: #ff0088;
+        margin-right: 10px;
+    }
+    #mp_userId{
+        font-weight: bolder !important;
+    }
+    .mp_area{
+        min-height: 180px;
+        border-radius: 15px;
+        padding:25px;
+        box-sizing: border-box;
+    }
+    .mp_ticket{
+        width:42%;
+        background-color:#4346FF;  
+        float:left;
+    }
+    .mp_review{
+        width:55%;
+        border : #4346FF 3px solid;
+        float:right;
+    }
+    .mp_tktext{
+        color:white;
+        margin-bottom:2px;
+    }
+    .mp_rvtext{
+        margin-bottom:2px;
+    }
+    #mp_tktitle, #mp_rvtitle{
+        float:left;
+        font-size: 15px;
+        margin-top:13px;
+        font-weight: bold;
+    }
+    #mp_tkcnt, #mp_rvcnt{
+        float:right;
+        font-size:25px;
+        font-weight: bolder;
+    }
+    .mp_hr{
+        clear:both;
+        margin:15px auto;
+    } 
+    .mp_blanktxt{
+        font-size: 13px;
+        text-align: center;
+    }
+    .mp_mvtitle{
+        font-size:15px;
+        line-height:20px;
+        font-weight: bold;
+    }
+    .mp_mvdate{
+        font-size:12px;
+        line-height:20px;
+        float:right;
+        margin-right:10px;
+    }
+    .mp_seats{
+        line-height:20px;
+        font-weight: bolder;
+        float:right;
+    }
+    .mp_stars{
+        font-weight: bolder;
+        float:right;
+    }
+    .mp_tklist{
+        color:white;
+    }
+    .mp_comment{
+        position:absolute;
+        display: inline-block;
+        font-size:12px;
+        height:20px;
+        margin-left: 10%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 50%;
+        top:5px;
+        left:20%;
+        line-height:19px;
+    } 
+    .mp_rvlist{
+        position:relative;
+        line-height:27px;
+    }
+    #mp_lktitle{
+        clear:both;
+        padding-top:20px;
+        position:relative;
+        overflow: hidden;
+    }
+    #likedhr{
+        display: inline-block;
+        position:absolute;
+        width:100%;
+        top:47%;
+        margin-left: 20px;
+    }
+    .card{
+        float:left;
+        margin-right:15px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border:#4346FF 2px solid;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        min-width: 12rem; 
+    }
+    .imgarea {
+        position: relative;
+        width: 13rem; 
+        height: 360px;
+        overflow: hidden;
+    }
+    .imgarea > img {
+        position: absolute; 
+        top: 0; 		 
+        left: 0;
+        width: 13rem; 
+    }
+    .card-body{
+        text-align: right;
+    }
+    .card .bi{
+        position: absolute;
+        display: inline-block;
+        color:#ff0088;
+        font-size: 30px;
+        bottom:5px;
+        left:10px;
+    }
+    .card-text{
+        margin-right:10px;
+        font-size:13px;
+    }
+    #lkcard_title{
+        font-weight: bold;
+        font-size:18px;
+    }
+    .mp_cardlist{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left:5%;
+    }
+    .mp_icon{
+    	float:right; 
+    	margin-left:5px; 
+    	font-size:12px;
+    	line-height:20px;
+    }
+    .mp_icon:hover{
+    	color:#ff0088
+    }
+    .rv_icon{
+    	line-height:27px;
+    	color:#4346FF;
+    }
+ 
+    .popup_comment{
+   		display:inline-block;
+   		font-size:12px;
+    }
+    .popup_btn{
+    	 display:inline-block;
+    	 font-size:12px;
+    }

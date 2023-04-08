@@ -2,10 +2,10 @@
  * 
  */
 // 모든 페이지에 header, footer load
+ 
 $(document).ready(function() {
-
-	$("#header").load("./header.jsp");  // 원하는 파일 경로를 삽입하면 된다
-	$("#footer").load("./footer.html");  // 원하는 파일 경로를 삽입하면 된다
+	$("#header").load("/header.jsp");  // 원하는 파일 경로를 삽입하면 된다
+	$("#footer").load("/footer.html");  // 원하는 파일 경로를 삽입하면 된다
 });
 // 리뷰 페이지 datepicker - 오늘 이후로는 선택 불가
 
@@ -158,6 +158,11 @@ function signupValidation(){
 			sf.userId.focus();
 			return false;
 		} 
+		if($('#su_IdAlert').text().trim()!='사용 가능한 아이디입니다.'){
+			alert("아이디 중복 확인을 해 주세요!");
+			sf.userId.focus();
+			return false;
+		} 		
 		if(!sf.userPw.value.trim()){
 			alert("비밀번호를 입력하세요.");
 			sf.userPw.focus();
@@ -182,7 +187,9 @@ function signupValidation(){
 			alert("아이디 형식을 확인하세요!");
 			sf.userId.focus();
 			return false;
-		} 
+		}
+
+		 
 		if(!/^[a-zA-Z][0-9a-zA-Z]{7,14}$/.test(sf.userPw.value.trim())){
 			alert("비밀번호 형식을 확인하세요!");
 			sf.userPw.focus();
@@ -203,6 +210,8 @@ function signupValidation(){
 			sf.userPhone.focus();
 			return false;
 		}  
-		 				
+		alert("회원가입 성공!")
 		sf.submit();
 }
+
+// 리뷰페이지 폼

@@ -49,6 +49,7 @@
         <hr style=" margin:0;clear:both;">
     </header>
 <script>
+
 	function logoutConfirm(){
 		if( confirm("정말 로그아웃하시겠습니까?")){
 			alert("로그아웃되었습니다.");
@@ -63,9 +64,9 @@
     let day = yy+mm+dd;
     let i = 0;
     
-	$(function(){
+/* 	$(function(){
     	setInterval(boxoffice,2000);
-    });
+    }); */
     
     function boxoffice(){
  		$.ajax({

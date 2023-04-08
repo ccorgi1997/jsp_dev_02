@@ -22,7 +22,7 @@
 	rel="stylesheet"
 	integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
 	crossorigin="anonymous">
-<% if(session.getAttribute("MovieList")==null){response.sendRedirect("./sxt/crawl.mo");}%>
+<% if(session.getAttribute("MovieList")==null){response.sendRedirect(request.getContextPath()+"/sxt/crawl.mo");}%>
 </head>
 <body>
 	<header id="header"></header>
