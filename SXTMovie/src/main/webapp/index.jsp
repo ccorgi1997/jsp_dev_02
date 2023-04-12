@@ -10,8 +10,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <link rel="stylesheet" href='style.css'>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -69,7 +68,7 @@
 			<div class="row card_moviechart">
 				<div class="card_slide">
 					<c:forEach var="movie" items="${MovieList}">
-						<div class="col card_frameset">
+						<div class="col card_frameset" >
 							<div class="row cardset">
 								<div class="card text-center card_posterFrame"
 									onclick="location.href=
@@ -131,6 +130,7 @@
 		  moveSlide(currentIdx + 1);
 		}
 	});
+	
 	let video = $('#videoplayer').get(0)
 	function pause(){
         if(video.paused){
@@ -139,29 +139,6 @@
         	video.pause();
         }
 	}
-/* 	let video = $('#video')
-    $('#').on({
-        click:function(){
-            if(movieSelectionVideoObj.paused){
-                movieSelectionVideoObj.play();
-                $(this).addClass('active');
-            }else{
-                movieSelectionVideoObj.pause();
-                $(this).removeClass('active');
-            }
-        }
-    });
-
-    $('.btn_movieSelection_soundOnOff').on({
-        click:function(){
-            if(movieSelectionVideoObj.muted){
-                movieSelectionVideoObj.muted = false;
-                $(this).addClass('active');
-            }else{
-                movieSelectionVideoObj.muted = true;
-                $(this).removeClass('active');
-            }
-        }
-    }); */	 
+ 
 </script>
 </html>

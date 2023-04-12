@@ -6,7 +6,7 @@
     <header>
         <div class="header">
         	<a href="/sxt/index.mo">
-	            <img id="logo" src="https://i.ibb.co/dDscJNf/logo.png" alt="로고" title="메인페이지">
+	            <img id="logo" src="https://i.postimg.cc/zD2FWpvc/logo.png" alt="로고" title="메인페이지">
         	</a>
             <div style="float:right">
                 <div id="boxoffice"></div>
@@ -64,22 +64,26 @@
     let day = yy+mm+dd;
     let i = 0;
     
-/* 	$(function(){
+ 	$(function(){
     	setInterval(boxoffice,2000);
-    }); */
-    
+    });
+
     function boxoffice(){
  		$.ajax({
 			  type: "GET", // GET 방식으로 요청한다.
-			  url: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=24dfa1e924cd9a27fdf3e9cb568b5f2a&targetDt="+day,
+			  url: "https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/"+
+			  "searchDailyBoxOfficeList.json?key=2e60347fd09cf3ee5d7ae6f3d9c6fb90&targetDt="+day,
 			  data: {}, // 요청하면서 함께 줄 데이터 (GET 요청시엔 비워두세요)
 			  success: function(response){ // 서버에서 준 결과를 response라는 변수에 담음
 			    let boxOfficeList = response["boxOfficeResult"]["dailyBoxOfficeList"];
 	           	let temp_html = '';
 	           	if(boxOfficeList[i].rankOldAndNew == 'OLD'){
-	                temp_html = `<label id="borank">\${boxOfficeList[i].rank}</label><label id="botitle">\${boxOfficeList[i].movieNm}</label>`
+	                temp_html = `<label id="borank">\${boxOfficeList[i].rank}</label><label id="botitle">
+	                \${boxOfficeList[i].movieNm}</label>`
 	           	}else{
-	                temp_html = `<label id="bonew">\${boxOfficeList[i].rankOldAndNew}</label><label id="borank">\${boxOfficeList[i].rank}</label><label id="botitle">\${boxOfficeList[i].movieNm}</label>`
+	                temp_html = `<label id="bonew">\${boxOfficeList[i].rankOldAndNew}
+	                </label><label id="borank">\${boxOfficeList[i].rank}</label><label id="botitle">
+	                \${boxOfficeList[i].movieNm}</label>`
 	           	}
 	           	$('#boxoffice').html(temp_html);
 	           	i++;

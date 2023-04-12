@@ -25,7 +25,7 @@
         <div class="detail_imgarea">
             <img src="${param.movieImgsrc}" alt="포스터" title="포스터">
         </div>
-        <div class="detail_reviewarea">
+        <div class="detail_reviewarea" style="width:515px !important">
           	<c:choose>
           		<c:when test="${param.movieAge eq '12'}">
              		<button class="ratebutton"  style="background-color:#F2E503" value="${param.movieAge}" >${param.movieAge }</button>
@@ -69,7 +69,9 @@
 <script src='${pageContext.request.contextPath}/function.js'></script>
 <script >
 	$(review_dp());
+	
 	$('#review_sb').on('click',reviewValidation);
+	
 	function reviewValidation(){
 		let form = document.review_form;
 		if(!form.reviewDate.value){

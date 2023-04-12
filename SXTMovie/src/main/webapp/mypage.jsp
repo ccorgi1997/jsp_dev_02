@@ -35,7 +35,7 @@
             	<c:otherwise>
             		<c:forEach var="ticket" items = "${TicketList }">
 			            <div class="mp_tklist">
-			                <span class="mp_mvtitle">${ticket.movieTitle }</span>
+			                <span class="mp_mvtitle" style="max-width:30% !important">${ticket.movieTitle }</span>
 			                <i class="bi bi-dash-square-fill mp_icon deleteTicket" 
 			                onclick="ticketDelete(${ticket.ticketNum })"></i>
 			                <span class="mp_seats">${ticket.seatNum }</span>
@@ -58,7 +58,7 @@
             		<c:set var="comment" value="${review.comments}"/>
             		<c:set var="replaced_comment" value='${fn:replace(comment,  "\'", "&#39;")}'/>
             			<div class="mp_rvlist">
-			                <span class="mp_mvtitle"  style="cursor:pointer;" 
+			                <span class="mp_mvtitle"  style="cursor:pointer; line-height:28px;" 
 			                onclick='popup_open("${replaced_comment}","${status.index }")'>
 			                ${review.movieTitle }</span>
 			                <i class="bi bi-dash-square-fill mp_icon rv_icon deleteReview" 
@@ -105,15 +105,7 @@
                         <p class="card-text" style="bottom:-2px; right:5px;"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
                     </div>
                 </div>
-                <div class="card" style="width: 13rem;">
-                    <i class="bi bi-heart-fill"></i>
-                    <div class="imgarea">
-                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86720/86720_320.jpg" class="card-img-top" alt="poster">
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text" style="bottom:-2px; right:5px;"><span id="lkcard_title">영화제목</span><br>찜한 날짜 <span>0000-00-00</span></p>
-                    </div>
-                </div>
+ 
             </div>
     </main>
     <footer id="footer"></footer>

@@ -188,7 +188,6 @@ function signupValidation(){
 			sf.userId.focus();
 			return false;
 		}
-
 		 
 		if(!/^[a-zA-Z][0-9a-zA-Z]{7,14}$/.test(sf.userPw.value.trim())){
 			alert("비밀번호 형식을 확인하세요!");

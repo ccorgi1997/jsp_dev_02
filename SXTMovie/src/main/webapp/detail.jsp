@@ -27,7 +27,7 @@
         <div class="detail_imgarea">
             <img src="${movieData.movieImgsrc }" alt="포스터" title="포스터">
         </div>
-        <div class="detail_textarea" >
+        <div class="detail_textarea" style="width:500px !important">
            	<c:choose>
            		<c:when test="${movieData.movieAge eq '12'}">
             	  	<button class="ratebutton"  style="background-color:#F2E503" value="${movieData.movieAge}" >${movieData.movieAge}</button>

@@ -68,6 +68,7 @@
     	}
         $('#'+e.target.value).toggleClass('seat_clicked')
     })
+    
     $('#submit_tk').on('click',ticketValidation);
     
 	function ticketValidation(e){

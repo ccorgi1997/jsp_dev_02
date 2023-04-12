@@ -161,8 +161,8 @@ footer {
     justify-content: center!important;
     align-items: center!important;
     flex-direction:column;
-    margin-right: calc(0.03 * var(--bs-gutter-x))!important;
-    margin-left: calc(0.03 * var(--bs-gutter-x))!important;
+    margin-right: calc(0.075 * var(--bs-gutter-x))!important;
+    margin-left: calc(0.075 * var(--bs-gutter-x))!important;
     
 }
 #cardcontainer{
@@ -170,7 +170,7 @@ footer {
 	 margin-bottom:50px;
 }
 .r_moviechart{
-    margin :auto !important;
+/*     margin :auto !important; */
 }
 
 .card_moviechart{
@@ -189,6 +189,7 @@ footer {
 	width: 400%; /* 슬라이드할 사진과 마진 총 넓이 */
 	transition: left 0.5s ease-out;
 	display: flex;
+	padding:0px !important;
 }
 
 .controller span{
@@ -646,7 +647,7 @@ main {
 #review_sb {
 	position: absolute;
 	bottom: 0px;
-	right: 35px;
+	right: 5px;
 }
 
 /* 	------------------------예매---------------------------	*/
@@ -861,16 +862,18 @@ main {
         top:47%;
         margin-left: 20px;
     }
-    .card{
+     .card{
         float:left;
-        margin-right:15px;
-        margin-bottom: 15px;
         box-sizing: border-box;
         border:#4346FF 2px solid;
         overflow: hidden;
         border-radius: 10px;
         position: relative;
-        min-width: 12rem; 
+/*         min-width: 12rem;  */
+    }
+    .mp_cardlist .card{
+         margin-right:15px; 
+         margin-bottom: 15px;    	
     }
     .imgarea {
         position: relative;
